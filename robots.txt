@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kde9999.github.io/element-fight-web/sitemap.xml
