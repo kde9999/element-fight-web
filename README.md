@@ -10,7 +10,9 @@ Ejecutar `python3 server.py` y abrir http://127.0.0.1:4173. No requiere instalar
 
 En Settings → Pages seleccionar Deploy from a branch, rama `main`, carpeta `/ (root)` y guardar. El archivo `.nojekyll` permite servir los recursos directamente.
 
-Dirección prevista: https://kde9999.github.io/element-fight-web/
+Dominio preparado: https://elementfight.cl/
+
+Activación pendiente de delegar el DNS en NIC Chile y verificar HTTPS en GitHub Pages.
 
 Para cambiar de dominio ejecutar `python3 scripts/configure_public_url.py https://DOMINIO/`.
 
