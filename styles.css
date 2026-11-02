@@ -997,6 +997,9 @@ dialog::backdrop {
 }
 .dialog-video {
   width:100%;
+  height:auto;
+  aspect-ratio:16 / 9;
+  object-fit:contain;
   max-height:65dvh;
   border-radius:5px;
   background:#000

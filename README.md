@@ -28,3 +28,7 @@ Los enlaces de descarga permanecen desactivados hasta el lanzamiento. Política 
 El código, personajes, ilustraciones y videos de Element Fight se conservan bajo los derechos de su titular. La publicación de este repositorio no concede una licencia general de reutilización. Las fuentes Barlow y Barlow Condensed conservan sus licencias incluidas en `assets/`.
 
 Este proyecto comienza con un historial nuevo y no contiene código Swift, originales de arte, grabaciones de trabajo ni historial del juego.
+
+## Video de combate · 2 de noviembre de 2026
+
+«Ver el combate» abre un montaje nativo de Jorge contra Alonso en el Santuario de la Tormenta: técnicas direccionales, combos, carga estática, marea de retorno, poderes, ultras completos y dominios. Los dominios despliegan sus escenarios propios. Duración aproximada: 61 segundos; MP4 H.264 de 960×540, 30 fps, con inicio progresivo, de unos 5,5 MB. El video no se precarga al entrar a la portada. Música: Epic Boss Battle, Juhani Junkala (SubspaceAudio), CC0. Los originales de captura y el master se conservan fuera del sitio público.
