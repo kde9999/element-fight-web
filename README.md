@@ -12,7 +12,7 @@ En Settings → Pages seleccionar Deploy from a branch, rama `main`, carpeta `/ 
 
 Dominio preparado: https://elementfight.cl/
 
-Activación pendiente de delegar el DNS en NIC Chile y verificar HTTPS en GitHub Pages.
+DNS configurado en Cloudflare y delegación guardada en NIC Chile el 2 de noviembre de 2026: `dee.ns.cloudflare.com` y `sean.ns.cloudflare.com`. Dominio asociado en GitHub Pages. Pendiente de propagación pública y habilitación de HTTPS.
 
 Para cambiar de dominio ejecutar `python3 scripts/configure_public_url.py https://DOMINIO/`.
 
