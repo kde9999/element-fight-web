@@ -12,7 +12,7 @@ En Settings → Pages seleccionar Deploy from a branch, rama `main`, carpeta `/ 
 
 Dominio preparado: https://elementfight.cl/
 
-DNS configurado en Cloudflare y delegación guardada en NIC Chile el 2 de noviembre de 2026: `dee.ns.cloudflare.com` y `sean.ns.cloudflare.com`. Dominio asociado en GitHub Pages. Pendiente de propagación pública y habilitación de HTTPS.
+DNS configurado en Cloudflare y delegación guardada en NIC Chile el 2 de noviembre de 2026: `dee.ns.cloudflare.com` y `sean.ns.cloudflare.com`. Dominio asociado en GitHub Pages. HTTPS obligatorio activado en GitHub Pages.
 
 Para cambiar de dominio ejecutar `python3 scripts/configure_public_url.py https://DOMINIO/`.
 
@@ -23,7 +23,7 @@ Para cambiar de dominio ejecutar `python3 scripts/configure_public_url.py https:
 - `assets/`: imágenes optimizadas, videos y fuentes para publicación.
 - `scripts/configure_public_url.py`: configuración de canonical, sitemap y robots.
 
-Los enlaces de descarga permanecen desactivados hasta el lanzamiento. Política de privacidad y página de soporte pendientes de incorporar.
+Los enlaces de las tiendas permanecen desactivados hasta confirmar la ficha oficial. Las páginas `/privacidad/`, `/soporte/`, `/datos/`, `/terminos/`, `/descargar/` y `/creditos/` están integradas y funcionan sin JavaScript. No incorporar analítica, formularios ni compras sin revisar política y declaraciones.
 
 ## Derechos
 

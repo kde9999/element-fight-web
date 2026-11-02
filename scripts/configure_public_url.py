@@ -25,6 +25,8 @@ page = SubElement(root, 'url'); SubElement(page,'loc').text=url
 for path in sorted((WEB/'assets').glob('*.webp')):
     image = SubElement(page,'image:image')
     SubElement(image,'image:loc').text = urljoin(url, path.relative_to(WEB).as_posix())
+for slug in ('privacidad', 'soporte', 'datos', 'terminos', 'descargar', 'creditos'):
+    entry = SubElement(root, 'url'); SubElement(entry, 'loc').text = urljoin(url, slug+'/')
 (WEB/'sitemap.xml').write_bytes(b'<?xml version="1.0" encoding="UTF-8"?>\n'+tostring(root,encoding='utf-8'))
 (WEB/'robots.txt').write_text(f'User-agent: *\nAllow: /\n\nSitemap: {urljoin(url,"sitemap.xml")}\n')
 print(f'Canonical, social images, sitemap and robots configured for {url}')

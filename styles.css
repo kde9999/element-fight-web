@@ -2054,3 +2054,6 @@ dialog.profile-dialog { width:min(1180px,calc(100% - 40px)); }
   .capture-label br { display:none; }
   .capture-label br:after { content:' '; }
 }
+
+/* Public support and distribution pages */
+.footer-bottom nav{display:flex;flex-wrap:wrap;gap:8px 22px}.footer-bottom nav a{display:inline-flex;align-items:center;min-height:44px;text-underline-offset:4px}
