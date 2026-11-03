@@ -2057,3 +2057,88 @@ dialog.profile-dialog { width:min(1180px,calc(100% - 40px)); }
 
 /* Public support and distribution pages */
 .footer-bottom nav{display:flex;flex-wrap:wrap;gap:8px 22px}.footer-bottom nav a{display:inline-flex;align-items:center;min-height:44px;text-underline-offset:4px}
+
+/* ArenaMenu's original palette and cut-metal surfaces, shared with the game. */
+:root {
+  --arena-ink:#060b18;
+  --arena-blue:#11243b;
+  --arena-gold:#ffc952;
+  --arena-bronze:#99591a;
+  --arena-cyan:#33e0ff;
+  --arena-cut:polygon(14px 0,calc(100% - 14px) 0,100% 14px,100% calc(100% - 14px),calc(100% - 14px) 100%,14px 100%,0 calc(100% - 14px),0 14px);
+}
+.brand { width:178px; flex-shrink:0; transform:none; }
+.brand img { width:100%; height:auto; object-fit:contain; }
+.footer-main .brand { width:200px; }
+.hero-logo { width:clamp(240px,28vw,390px); height:auto; object-fit:contain; margin:0 0 18px -8px; filter:drop-shadow(0 5px 12px #0009); }
+.hero-content { padding-top:28px; padding-bottom:85px; }
+.hero-copy h1 { font-size:clamp(62px,5.8vw,88px); }
+.site-header { background:var(--arena-ink); border-bottom:1px solid #ffc95245; }
+/* Only the decorative surfaces are clipped, keeping keyboard outlines visible. */
+:is(.button,.video-trigger,.text-button,.profile-open,.filter,.showcase-tabs button,.reader-toolbar button,.dialog-close,.menu-toggle) {
+  --plate:linear-gradient(135deg,var(--arena-blue),var(--arena-ink));
+  --rim:linear-gradient(135deg,var(--arena-cyan),#ffc952cc 55%,var(--arena-bronze));
+  position:relative;
+  isolation:isolate;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  color:var(--white);
+  font-weight:800;
+  font-style:italic;
+  transition:filter .16s,transform .16s;
+}
+:is(.button,.video-trigger,.text-button,.profile-open,.filter,.showcase-tabs button,.reader-toolbar button,.dialog-close,.menu-toggle)::before,
+:is(.button,.video-trigger,.text-button,.profile-open,.filter,.showcase-tabs button,.reader-toolbar button,.dialog-close,.menu-toggle)::after {
+  content:'';
+  position:absolute;
+  pointer-events:none;
+  clip-path:var(--arena-cut);
+  z-index:-1;
+}
+:is(.button,.video-trigger,.text-button,.profile-open,.filter,.showcase-tabs button,.reader-toolbar button,.dialog-close,.menu-toggle)::before { inset:0; background:var(--rim); }
+:is(.button,.video-trigger,.text-button,.profile-open,.filter,.showcase-tabs button,.reader-toolbar button,.dialog-close,.menu-toggle)::after {
+  inset:1.5px;
+  background:linear-gradient(115deg,#ffffff0c,transparent 45%),var(--plate);
+  box-shadow:inset 0 0 0 4px #060b1855,inset 0 0 0 5px #33e0ff20;
+}
+:is(.button,.filter.active,.showcase-tabs button[aria-selected=true]) {
+  --plate:linear-gradient(135deg,#ffe88f,var(--arena-gold) 48%,#d67814);
+  --rim:linear-gradient(135deg,#fff5d7,var(--arena-gold),#f88a17);
+  color:var(--arena-ink);
+  filter:drop-shadow(0 3px 6px #ffc95228);
+}
+.button { letter-spacing:.02em; padding:17px 26px; }
+.button-small { padding:12px 20px; }
+:is(.button,.video-trigger,.text-button,.profile-open,.filter,.showcase-tabs button,.reader-toolbar button,.dialog-close,.menu-toggle):hover {
+  background:transparent;
+  filter:brightness(1.15) drop-shadow(0 3px 7px #33e0ff25);
+  transform:translateY(-1px);
+}
+:is(.button,.video-trigger,.text-button,.profile-open,.filter,.showcase-tabs button,.reader-toolbar button,.dialog-close,.menu-toggle):active { transform:scale(.975); filter:brightness(1.2); }
+.video-trigger { min-height:55px; padding:12px 20px; gap:12px; }
+.play-icon { border-color:#33e0ff70; color:var(--arena-gold); }
+.text-button { padding:12px 20px; min-height:48px; }
+.profile-open { padding:13px 20px; min-height:48px; color:var(--white); }
+.filter,.showcase-tabs button { min-height:44px; padding:10px 22px; }
+.filter:not(.active):hover { color:var(--white); }
+.button-ink { --plate:linear-gradient(135deg,var(--arena-blue),var(--arena-ink)); --rim:linear-gradient(135deg,var(--arena-cyan),var(--arena-gold),var(--arena-bronze)); color:var(--white); }
+.roster button { border-radius:0; border-color:#33e0ff40; background:var(--arena-ink); }
+.roster button[aria-pressed=true] { border-color:var(--arena-gold); box-shadow:0 0 0 2px var(--arena-bronze),0 0 14px #ffc95230; }
+.arena-option { border-radius:0; border-color:#33e0ff35; background:linear-gradient(135deg,var(--arena-blue),var(--arena-ink)); }
+.arena-option[aria-pressed=true] { border-color:var(--arena-gold); box-shadow:inset 3px 0 var(--arena-gold); }
+.reader-toolbar button:disabled { opacity:.4; cursor:default; transform:none; filter:none; }
+@media(max-width:700px) {
+  .brand { width:145px; }
+  .hero-logo { width:min(300px,80%); margin-bottom:15px; }
+  .hero-copy h1 { font-size:clamp(46px,10.8vw,71px); }
+  .hero-actions { gap:12px; flex-wrap:wrap; }
+  .hero-actions .video-trigger { padding:12px 16px; min-height:50px; }
+  .filter { padding:10px 16px; }
+  .hero-content { padding-top:24px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  :is(.button,.video-trigger,.text-button,.profile-open,.filter,.showcase-tabs button,.reader-toolbar button,.dialog-close,.menu-toggle) { transition:none; }
+  :is(.button,.video-trigger,.text-button,.profile-open,.filter,.showcase-tabs button,.reader-toolbar button,.dialog-close,.menu-toggle):is(:hover,:active) { transform:none; }
+}
