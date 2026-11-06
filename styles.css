@@ -1015,6 +1015,12 @@ dialog::backdrop {
   gap:12px;
   margin-block:20px
 }
+.reader-toolbar[hidden] {
+  display:none
+}
+.dialog-image.reader-chapter-image {
+  max-height:none
+}
 .reader-toolbar button {
   background:#2b4569;
   border-radius:4px;

@@ -16,7 +16,12 @@ function setImage(image, src) {
     image.height = info.height;
     image.sizes = '(max-width: 700px) 100vw, 50vw';
     image.srcset = info.variants.map(v => `${v.src} ${v.width}w`).join(', ');
-  } else { image.removeAttribute('srcset'); image.removeAttribute('sizes'); }
+  } else {
+    image.removeAttribute('srcset');
+    image.removeAttribute('sizes');
+    image.removeAttribute('width');
+    image.removeAttribute('height');
+  }
   image.src = src;
 }
 
@@ -166,14 +171,20 @@ $('#art-grid').addEventListener('click', e => {
   const art = artworks.find(a => a.id === button.dataset.art);
   openDialog('Galería de arte', `<h2 id="dialog-title">${art.title}</h2><img class="dialog-image" src="${art.src}" alt="${art.title}" ${imageAttrs(art.src, '(max-width: 700px) 100vw, 50vw')}><p class="image-credit">Arte original del proyecto Element Fight.</p>`);
 });
+const chapterEditions = {
+  es: {src:'assets/manga/chapter-001/page-001-es.webp', caption:'Alonso atrapa una trucha en el río y se la muestra a su hermano Ito. Lee las viñetas centrales de derecha a izquierda.'},
+  en: {src:'assets/manga/chapter-001/page-001-en.webp', caption:'Alonso catches a trout in the river and shows it to his brother Ito. Read the middle panels from right to left.'}
+};
 const stories = [
+  {name:'Capítulo 1 · La pesca de Alonso', pages:[{editions:chapterEditions}]},
   {name:'Ito y A', pages:[{src:'assets/comic-scene.webp',caption:'La preparación: Ito concentra su energía frente a A.'},{src:'assets/comic-impact.webp',caption:'El impacto: la pelea salta a una nueva viñeta.'}]},
   {name:'El dominio de Ito', pages:[{src:'assets/jorge-domain-1.webp',caption:'Cielo de los mil voltios: primera escena.'},{src:'assets/jorge-domain-2.webp',caption:'Cielo de los mil voltios: segunda escena.'},{src:'assets/jorge-domain-3.webp',caption:'Cielo de los mil voltios: tercera escena.'}]}
 ];
 function openReader() {
-  openDialog('Manga · Avance visual', '<h2 id="dialog-title">El combate, viñeta a viñeta.</h2><label class="sr-only" for="reader-story">Elige una secuencia</label><select class="reader-select" id="reader-story">' + stories.map((story,i)=>`<option value="${i}">${story.name}</option>`).join('') + '</select><figure class="reader-figure"><img class="dialog-image" id="reader-image" alt=""><figcaption id="reader-caption"></figcaption></figure><div class="reader-toolbar"><button type="button" id="reader-prev">Anterior</button><span class="reader-status" id="reader-status" aria-live="polite"></span><button type="button" id="reader-next">Siguiente</button></div><p class="image-credit">Escenas ilustradas del juego. Este avance reúne el arte existente; los capítulos del manga se incorporarán en esta sección.</p>');
+  openDialog('Manga', '<h2 id="dialog-title">Lector de manga</h2><label class="sr-only" for="reader-story">Elige una lectura</label><select class="reader-select" id="reader-story">' + stories.map((story,i)=>`<option value="${i}">${story.name}</option>`).join('') + '</select><div id="reader-language-field"><label class="sr-only" for="reader-language">Idioma de la página</label><select class="reader-select" id="reader-language"><option value="es" lang="es">Español</option><option value="en" lang="en">English</option></select></div><figure class="reader-figure"><img class="dialog-image" id="reader-image" alt=""><figcaption id="reader-caption"></figcaption></figure><div class="reader-toolbar" id="reader-toolbar"><button type="button" id="reader-prev">Anterior</button><span class="reader-status" id="reader-status" aria-live="polite"></span><button type="button" id="reader-next">Siguiente</button></div>');
   readerState = {story:0,page:0};
   $('#reader-story').addEventListener('change', e => {readerState.story=Number(e.target.value);readerState.page=0;renderPage();});
+  $('#reader-language').addEventListener('change', renderPage);
   $('#reader-prev').addEventListener('click', ()=>changePage(-1));
   $('#reader-next').addEventListener('click', ()=>changePage(1));
   renderPage();
@@ -181,9 +192,23 @@ function openReader() {
 function renderPage() {
   const pages = stories[readerState.story].pages;
   const page = pages[readerState.page];
-  setImage($('#reader-image'), page.src);
-  $('#reader-image').alt = page.caption;
-  $('#reader-caption').textContent = page.caption;
+  const hasEditions = Boolean(page.editions);
+  const language = hasEditions ? $('#reader-language').value : 'es';
+  const {src, caption: description} = hasEditions ? page.editions[language] : page;
+  const image = $('#reader-image');
+  const caption = $('#reader-caption');
+  $('#reader-language-field').hidden = !hasEditions;
+  $('#reader-toolbar').hidden = pages.length === 1;
+  image.classList.toggle('reader-chapter-image', hasEditions);
+  image.lang = language;
+  image.alt = description;
+  setImage(image, src);
+  if (hasEditions) {
+    image.width = 1049;
+    image.height = 1500;
+  }
+  caption.lang = language;
+  caption.textContent = description;
   $('#reader-status').textContent = `${readerState.page+1} de ${pages.length}`;
   $('#reader-prev').disabled = readerState.page === 0;
   $('#reader-next').disabled = readerState.page === pages.length-1;
