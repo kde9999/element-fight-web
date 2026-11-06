@@ -1,7 +1,7 @@
 [
   {
     "id": "jorge",
-    "name": "Jorge",
+    "name": "Ito",
     "subtitle": "Niño rayo",
     "domain": "Cielo de los mil voltios",
     "image": "assets/jorge.webp",
@@ -17,7 +17,7 @@
           "id": "power",
           "label": "Especial",
           "name": "Rayo fatal",
-          "description": "Jorge desata Rayo fatal en la arena.",
+          "description": "Ito desata Rayo fatal en la arena.",
           "video": "assets/showcases/jorge-power.mp4",
           "poster": "assets/showcases/jorge-power.jpg"
         },
@@ -42,7 +42,7 @@
   },
   {
     "id": "alonso",
-    "name": "Alonso",
+    "name": "A",
     "subtitle": "Pequeño guardián del agua",
     "domain": "Trono del océano infinito",
     "image": "assets/alonso.webp",
@@ -58,7 +58,7 @@
           "id": "power",
           "label": "Especial",
           "name": "Marea fatal",
-          "description": "Alonso desata Marea fatal en la arena.",
+          "description": "A desata Marea fatal en la arena.",
           "video": "assets/showcases/alonso-power.mp4",
           "poster": "assets/showcases/alonso-power.jpg"
         },
@@ -124,7 +124,7 @@
   },
   {
     "id": "karina",
-    "name": "Karina",
+    "name": "Kary",
     "subtitle": "Guardiana de los tornados",
     "domain": "Palacio del ojo del tornado",
     "image": "assets/karina.webp",
@@ -140,7 +140,7 @@
           "id": "power",
           "label": "Especial",
           "name": "Vendaval fatal",
-          "description": "Karina desata Vendaval fatal en la arena.",
+          "description": "Kary desata Vendaval fatal en la arena.",
           "video": "assets/showcases/karina-power.mp4",
           "poster": "assets/showcases/karina-power.jpg"
         },
