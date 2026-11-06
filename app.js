@@ -23,13 +23,10 @@ function setImage(image, src) {
 const dialog = $('#content-dialog');
 let lastFocus;
 let readerState = null;
-let dialogCleanup = null;
 let rosterCharacters = [];
 let selectedCharacterId = 'jorge';
 function openDialog(context, html) {
   if (!dialog.open) lastFocus = document.activeElement;
-  dialogCleanup?.();
-  dialogCleanup = null;
   readerState = null;
   $('#dialog-context').textContent = context;
   $('#dialog-body').innerHTML = html;
@@ -42,8 +39,6 @@ function closeDialog() { dialog.close(); }
 $('.dialog-close').addEventListener('click', closeDialog);
 dialog.addEventListener('click', e => { if (e.target === dialog) { const box = dialog.getBoundingClientRect(); if (e.clientX < box.left || e.clientX > box.right || e.clientY < box.top || e.clientY > box.bottom) closeDialog(); } });
 dialog.addEventListener('close', () => {
-  dialogCleanup?.();
-  dialogCleanup = null;
   $('video', dialog)?.pause();
   readerState = null;
   document.body.style.overflow = '';
@@ -217,7 +212,6 @@ $$('[data-article]').forEach(button=>button.addEventListener('click',()=>{
 function openCharacterProfile(id) {
   const character = rosterCharacters.find(item => item.id === id);
   if (!character?.profile) return;
-  const scenes = character.profile.showcases;
   openDialog('Plantel · Ficha del personaje', `
     <div class="character-profile">
       <div class="profile-heading">
@@ -225,57 +219,10 @@ function openCharacterProfile(id) {
         <div><h2 id="dialog-title">${escapeHTML(character.name)}</h2><p class="profile-subtitle">${escapeHTML(character.subtitle)}</p></div>
         <label class="profile-switch">Cambiar personaje<select id="profile-character">${rosterCharacters.map(item => `<option value="${item.id}" ${item.id === id ? 'selected' : ''}>${escapeHTML(item.name)}</option>`).join('')}</select></label>
       </div>
-      <div class="profile-intro"><p>${escapeHTML(descriptions[id] || character.subtitle)}</p><span>En acción</span></div>
-      <div class="showcase-tabs" role="tablist" aria-label="Ver en acción">
-        ${scenes.map((scene,index) => `<button type="button" role="tab" id="showcase-tab-${scene.id}" data-showcase="${scene.id}" aria-controls="showcase-panel" aria-selected="${index===0}" tabindex="${index===0 ? 0 : -1}">${scene.label}</button>`).join('')}
-      </div>
-      <section class="showcase-panel" id="showcase-panel" role="tabpanel" aria-labelledby="showcase-tab-power">
-        <div class="showcase-video-wrap"><video id="showcase-video" src="${scenes[0].video}" controls playsinline preload="metadata" poster="${scenes[0].poster}" aria-label="${escapeHTML(scenes[0].name)} de ${escapeHTML(character.name)} en acción">Tu navegador no reproduce este video.</video><p class="showcase-error" id="showcase-error" role="status" hidden>No se pudo cargar la escena. <button type="button" id="showcase-retry">Volver a cargar</button></p></div>
-        <div class="showcase-caption"><div><h3 id="showcase-title">${escapeHTML(scenes[0].name)}</h3><p id="showcase-description">${escapeHTML(scenes[0].description)}</p></div><span class="capture-label">Captura del juego<br> Versión en desarrollo</span></div>
-      </section>
+      <div class="profile-intro"><p>${escapeHTML(descriptions[id] || character.subtitle)}</p></div>
       <div class="profile-traits">${character.profile.abilities.map(ability => `<div><h4>${escapeHTML(ability.name)}</h4><p>${escapeHTML(ability.description)}</p></div>`).join('')}</div>
     </div>`);
-  dialog.classList.add('profile-dialog');
   $('#profile-character').addEventListener('change', event => openCharacterProfile(event.target.value));
-  const video = $('#showcase-video');
-  const tabs = $$('[data-showcase]', dialog);
-  function showScene(kind) {
-    const scene = scenes.find(item => item.id === kind);
-    video.pause();
-    video.poster = scene.poster;
-    video.src = scene.video;
-    video.setAttribute('aria-label', `${scene.name} de ${character.name} en acción`);
-    $('#showcase-error').hidden = true;
-    $('#showcase-title').textContent = scene.name;
-    $('#showcase-description').textContent = scene.description;
-    $('#showcase-panel').setAttribute('aria-labelledby', `showcase-tab-${kind}`);
-    tabs.forEach(tab => {const selected = tab.dataset.showcase === kind;tab.setAttribute('aria-selected', String(selected));tab.tabIndex = selected ? 0 : -1;});
-    video.load();
-  }
-  tabs.forEach((tab,index) => {
-    tab.addEventListener('click', () => showScene(tab.dataset.showcase));
-    tab.addEventListener('keydown', event => {
-      let next;
-      if (event.key === 'ArrowRight') next = (index+1)%tabs.length;
-      if (event.key === 'ArrowLeft') next = (index-1+tabs.length)%tabs.length;
-      if (event.key === 'Home') next = 0;
-      if (event.key === 'End') next = tabs.length-1;
-      if (next === undefined) return;
-      event.preventDefault(); tabs[next].focus(); showScene(tabs[next].dataset.showcase);
-    });
-  });
-  const errorBox = $('#showcase-error');
-  const onVideoError = () => {errorBox.hidden = false;};
-  video.addEventListener('error', onVideoError);
-  $('#showcase-retry').addEventListener('click', () => {$('#showcase-error').hidden = true;video.load();});
-  const onVisibility = () => {if (document.hidden) video.pause();};
-  document.addEventListener('visibilitychange', onVisibility);
-  dialogCleanup = () => {
-    video.removeEventListener('error', onVideoError);
-    video.pause();video.removeAttribute('src');$('source',video)?.remove();video.load();
-    document.removeEventListener('visibilitychange', onVisibility);
-    dialog.classList.remove('profile-dialog');
-  };
 }
 $('#open-profile').addEventListener('click', () => openCharacterProfile(selectedCharacterId));
 
