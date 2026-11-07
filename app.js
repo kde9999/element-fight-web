@@ -181,7 +181,7 @@ const stories = [
   {name:'El dominio de Ito', pages:[{src:'assets/jorge-domain-1.webp',caption:'Cielo de los mil voltios: primera escena.'},{src:'assets/jorge-domain-2.webp',caption:'Cielo de los mil voltios: segunda escena.'},{src:'assets/jorge-domain-3.webp',caption:'Cielo de los mil voltios: tercera escena.'}]}
 ];
 function openReader() {
-  openDialog('Manga', '<h2 id="dialog-title">Lector de manga</h2><label class="sr-only" for="reader-story">Elige una lectura</label><select class="reader-select" id="reader-story">' + stories.map((story,i)=>`<option value="${i}">${story.name}</option>`).join('') + '</select><div id="reader-language-field"><label class="sr-only" for="reader-language">Idioma de la página</label><select class="reader-select" id="reader-language"><option value="es" lang="es">Español</option><option value="en" lang="en">English</option></select></div><figure class="reader-figure"><img class="dialog-image" id="reader-image" alt=""><figcaption id="reader-caption"></figcaption></figure><div class="reader-toolbar" id="reader-toolbar"><button type="button" id="reader-prev">Anterior</button><span class="reader-status" id="reader-status" aria-live="polite"></span><button type="button" id="reader-next">Siguiente</button></div>');
+  openDialog('Web cómic', '<h2 id="dialog-title">Lector de web cómic</h2><label class="sr-only" for="reader-story">Elige una lectura</label><select class="reader-select" id="reader-story">' + stories.map((story,i)=>`<option value="${i}">${story.name}</option>`).join('') + '</select><div id="reader-language-field"><label class="sr-only" for="reader-language">Idioma de la página</label><select class="reader-select" id="reader-language"><option value="es" lang="es">Español</option><option value="en" lang="en">English</option></select></div><figure class="reader-figure"><img class="dialog-image" id="reader-image" alt=""><figcaption id="reader-caption"></figcaption></figure><div class="reader-toolbar" id="reader-toolbar"><button type="button" id="reader-prev">Anterior</button><span class="reader-status" id="reader-status" aria-live="polite"></span><button type="button" id="reader-next">Siguiente</button></div>');
   readerState = {story:0,page:0};
   $('#reader-story').addEventListener('change', e => {readerState.story=Number(e.target.value);readerState.page=0;renderPage();});
   $('#reader-language').addEventListener('change', renderPage);
@@ -219,7 +219,10 @@ function changePage(direction) {
   readerState.page=Math.max(0,Math.min(count-1,readerState.page+direction));
   renderPage();
 }
-$('[data-reader]').addEventListener('click', openReader);
+$$('[data-reader]').forEach(trigger => trigger.addEventListener('click', event => {
+  event.preventDefault();
+  openReader();
+}));
 $$('[data-video]').forEach(button => button.addEventListener('click', () => {
   openDialog('Ito contra A', '<h2 id="dialog-title">Rayos contra mareas.</h2><video class="dialog-video" controls playsinline preload="none" width="960" height="540" aria-label="Ito contra A en el Santuario de la Tormenta" poster="assets/combate-jorge-alonso-poster.webp"><source src="assets/combate-jorge-alonso.mp4" type="video/mp4">Tu navegador no reproduce este video. <a href="assets/combate-jorge-alonso.mp4">Abrir el combate de Ito y A</a>.</video><p class="image-credit">Ito y A en el Santuario de la Tormenta. Técnicas, poderes, ultras y dominios en un montaje de capturas reales del juego.</p><p class="image-credit">Música: Epic Boss Battle · Juhani Junkala (SubspaceAudio) · CC0.</p>');
 }));
