@@ -103,11 +103,11 @@ async function loadRoster() {
     }
     rosterCharacters = characters;
     $('#roster-count').textContent = `${characters.length} personajes`;
-    $('#roster').innerHTML = characters.map(character => `<button type="button" data-character="${escapeHTML(character.id)}" aria-label="Ver a ${escapeHTML(character.name)}" title="${escapeHTML(character.name)}" aria-pressed="${character.id === 'jorge'}"><img src="${escapeHTML(character.image)}" alt="" loading="lazy" ${imageAttrs(escapeHTML(character.image), '80px')}></button>`).join('');
-    $('#roster').addEventListener('click', e => {
-      const button = e.target.closest('[data-character]');
-      if (!button) return;
-      const character = characters.find(c => c.id === button.dataset.character);
+    $('#roster').innerHTML = characters.map(character => `<button type="button" data-character="${escapeHTML(character.id)}" aria-label="Ver a ${escapeHTML(character.name)}" title="${escapeHTML(character.name)}" aria-pressed="${character.id === 'jorge'}"><img src="${escapeHTML(character.image)}" alt="" loading="lazy" ${imageAttrs(escapeHTML(character.image), '80px')}><span class="roster-name">${escapeHTML(character.name)}</span></button>`).join('');
+    const selectCharacter = (id) => {
+      const character = characters.find(c => c.id === id);
+      if (!character) return;
+      const button = $$('#roster [data-character]').find(item => item.dataset.character === id);
       selectedCharacterId = character.id;
       $('#open-profile').setAttribute('aria-label', `Ver ficha de ${character.name}`);
       $('#fighter-name').textContent = character.name;
@@ -118,7 +118,37 @@ async function loadRoster() {
       setImage($('#fighter-image'), character.image);
       $('#fighter-image').alt = `Ilustración de ${character.name}, ${character.subtitle}`;
       $$('#roster button').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+      $('#fighter-position').textContent = `${character.name} · ${characters.indexOf(character) + 1} / ${characters.length}`;
+      if (matchMedia('(max-width: 700px)').matches) {
+        const roster = $('#roster');
+        roster.scrollTo({left: button.offsetLeft - (roster.clientWidth - button.offsetWidth) / 2, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+      }
+    };
+    $('#roster').onclick = e => {
+      const button = e.target.closest('[data-character]');
+      if (button) selectCharacter(button.dataset.character);
+    };
+    const stepCharacter = step => {
+      const index = characters.findIndex(item => item.id === selectedCharacterId);
+      selectCharacter(characters[(index + step + characters.length) % characters.length].id);
+    };
+    $$('[data-fighter-step]').forEach(button => {
+      button.onclick = () => stepCharacter(Number(button.dataset.fighterStep));
     });
+    const art = $('.fighter-art');
+    let touchStart = null;
+    art.ontouchstart = e => {
+      touchStart = e.touches.length === 1 ? {x:e.touches[0].clientX, y:e.touches[0].clientY} : null;
+    };
+    art.ontouchend = e => {
+      if (!touchStart) return;
+      const dx = e.changedTouches[0].clientX - touchStart.x;
+      const dy = e.changedTouches[0].clientY - touchStart.y;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) stepCharacter(dx < 0 ? 1 : -1);
+      touchStart = null;
+    };
+    art.ontouchcancel = () => { touchStart = null; };
+    selectCharacter(selectedCharacterId);
   } catch {
     $('#roster-count').textContent = 'Plantel no disponible';
     $('#roster').innerHTML = '<button class="roster-retry" type="button">Volver a cargar</button>';
