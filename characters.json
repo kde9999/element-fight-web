@@ -11,7 +11,25 @@
           "name": "Carga estática",
           "description": "Conectar tres ataques distintos acumula una carga para reforzar la descarga neutral."
         }
-      ]
+      ],
+      "special": {
+        "name": "Electropower",
+        "description": "Concentra electricidad y libera una potente descarga.",
+        "images": [
+          "assets/techniques/jorge/special-1.webp",
+          "assets/techniques/jorge/special-2.webp",
+          "assets/techniques/jorge/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Cielo de los mil voltios",
+        "description": "Apunta y suelta: el láser avisa su trayectoria antes de disparar.",
+        "images": [
+          "assets/techniques/jorge/domain-1.webp",
+          "assets/techniques/jorge/domain-2.webp",
+          "assets/techniques/jorge/domain-3.webp"
+        ]
+      }
     }
   },
   {
@@ -26,7 +44,25 @@
           "name": "Marea de retorno",
           "description": "El agua conserva su recorrido y puede volver hacia la posición de la mano al recibir la llamada."
         }
-      ]
+      ],
+      "special": {
+        "name": "Marea fatal",
+        "description": "Desata una marea de agua contra el rival.",
+        "images": [
+          "assets/techniques/alonso/special-1.webp",
+          "assets/techniques/alonso/special-2.webp",
+          "assets/techniques/alonso/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Trono del océano infinito",
+        "description": "Arrastra para guiar al dragón de agua.",
+        "images": [
+          "assets/techniques/alonso/domain-1.webp",
+          "assets/techniques/alonso/domain-2.webp",
+          "assets/techniques/alonso/domain-3.webp"
+        ]
+      }
     }
   },
   {
@@ -41,7 +77,24 @@
           "name": "Ancla astral",
           "description": "La proyección queda fija y puede ser destruida antes de que libere su ataque."
         }
-      ]
+      ],
+      "special": {
+        "name": "Sueño estelar",
+        "description": "Libera su energía estelar en un ataque de ensueño.",
+        "images": [
+          "assets/techniques/mai/special-1.webp",
+          "assets/techniques/mai/special-2.webp"
+        ]
+      },
+      "domain": {
+        "name": "Jardín de los sueños estelares",
+        "description": "Toca tres puntos para formar una constelación.",
+        "images": [
+          "assets/techniques/mai/domain-1.webp",
+          "assets/techniques/mai/domain-2.webp",
+          "assets/techniques/mai/domain-3.webp"
+        ]
+      }
     }
   },
   {
@@ -56,7 +109,24 @@
           "name": "Corriente de viento",
           "description": "El poder hacia abajo deja una corriente que forma parte de su juego de posición."
         }
-      ]
+      ],
+      "special": {
+        "name": "Vendaval fatal",
+        "description": "Desata un vendaval contra el rival.",
+        "images": [
+          "assets/techniques/karina/special-1.webp",
+          "assets/techniques/karina/special-2.webp"
+        ]
+      },
+      "domain": {
+        "name": "Palacio del ojo del tornado",
+        "description": "Arrastra el tornado y suelta para expandirlo.",
+        "images": [
+          "assets/techniques/karina/domain-1.webp",
+          "assets/techniques/karina/domain-2.webp",
+          "assets/techniques/karina/domain-3.webp"
+        ]
+      }
     }
   },
   {
@@ -75,7 +145,25 @@
           "name": "Poder de sombra",
           "description": "Desata su ataque especial de sombra y captura."
         }
-      ]
+      ],
+      "special": {
+        "name": "Pinza nocturna",
+        "description": "Atrapa al rival en un ataque de sombras.",
+        "images": [
+          "assets/techniques/umbra/special-1.webp",
+          "assets/techniques/umbra/special-2.webp",
+          "assets/techniques/umbra/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Patio del eclipse",
+        "description": "Oleadas de sombras atacan solas. Mantén pulsado para dirigirlas; cada impacto acumula +8% de crítico. El rival puede correr, saltar y esquivar.",
+        "images": [
+          "assets/techniques/umbra/domain-1.webp",
+          "assets/techniques/umbra/domain-2.webp",
+          "assets/techniques/umbra/domain-3.webp"
+        ]
+      }
     }
   },
   {
@@ -94,14 +182,32 @@
           "name": "Luna fatal",
           "description": "Convoca una manada de lobos que recorre el escenario."
         }
-      ]
+      ],
+      "special": {
+        "name": "Luna fatal",
+        "description": "Convoca una manada de lobos que recorre el escenario.",
+        "images": [
+          "assets/techniques/lunaro/special-1.webp",
+          "assets/techniques/lunaro/special-2.webp",
+          "assets/techniques/lunaro/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Santuario de la luna cazadora",
+        "description": "Toca una altura para enviar a la manada.",
+        "images": [
+          "assets/techniques/lunaro/domain-1.webp",
+          "assets/techniques/lunaro/domain-2.webp",
+          "assets/techniques/lunaro/domain-3.webp"
+        ]
+      }
     }
   },
   {
     "id": "ferro",
     "name": "Ferro",
     "subtitle": "El arsenal cinético",
-    "domain": "Arsenal de gravedad cero",
+    "domain": "Cámara de Inercia",
     "image": "assets/ferro.webp",
     "profile": {
       "abilities": [
@@ -109,7 +215,25 @@
           "name": "Combos propios",
           "description": "Combina sus ataques en rutas de contacto y remates que se interrumpen al fallar o recibir una respuesta."
         }
-      ]
+      ],
+      "special": {
+        "name": "Pulso cinético",
+        "description": "Libera un pulso de fuerza cinética contra el rival.",
+        "images": [
+          "assets/techniques/ferro/special-1.webp",
+          "assets/techniques/ferro/special-2.webp",
+          "assets/techniques/ferro/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Cámara de Inercia",
+        "description": "Arrastra hacia un riel y suelta para devolver el vagón.",
+        "images": [
+          "assets/techniques/ferro/domain-1.webp",
+          "assets/techniques/ferro/domain-2.webp",
+          "assets/techniques/ferro/domain-3.webp"
+        ]
+      }
     }
   },
   {
@@ -124,7 +248,25 @@
           "name": "Puño demoledor",
           "description": "Concentra su fuerza en un golpe de gran impacto."
         }
-      ]
+      ],
+      "special": {
+        "name": "Puño de demolición",
+        "description": "Concentra su fuerza en un puñetazo demoledor.",
+        "images": [
+          "assets/techniques/roco/special-1.webp",
+          "assets/techniques/roco/special-2.webp",
+          "assets/techniques/roco/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Territorio de la Última Embestida",
+        "description": "Arrastra para fijar la altura y suelta la embestida.",
+        "images": [
+          "assets/techniques/roco/domain-1.webp",
+          "assets/techniques/roco/domain-2.webp",
+          "assets/techniques/roco/domain-3.webp"
+        ]
+      }
     }
   },
   {
@@ -139,7 +281,25 @@
           "name": "Trama aérea",
           "description": "Sus proyectiles y movimientos aéreos forman su dinámica propia."
         }
-      ]
+      ],
+      "special": {
+        "name": "Tormenta celeste",
+        "description": "Libera una tormenta de viento contra el rival.",
+        "images": [
+          "assets/techniques/vela/special-1.webp",
+          "assets/techniques/vela/special-2.webp",
+          "assets/techniques/vela/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Cumbre del viento eterno",
+        "description": "Traza la dirección y suelta la ráfaga.",
+        "images": [
+          "assets/techniques/vela/domain-1.webp",
+          "assets/techniques/vela/domain-2.webp",
+          "assets/techniques/vela/domain-3.webp"
+        ]
+      }
     }
   },
   {
@@ -154,7 +314,25 @@
           "name": "Bastión de cristal",
           "description": "Su poder hacia abajo incorpora una defensa de cristal."
         }
-      ]
+      ],
+      "special": {
+        "name": "Fractura cristalina",
+        "description": "Desata una fractura de cristal contra el rival.",
+        "images": [
+          "assets/techniques/nucleo/special-1.webp",
+          "assets/techniques/nucleo/special-2.webp",
+          "assets/techniques/nucleo/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Catedral del corazón mineral",
+        "description": "Toca el suelo para invocar una columna.",
+        "images": [
+          "assets/techniques/nucleo/domain-1.webp",
+          "assets/techniques/nucleo/domain-2.webp",
+          "assets/techniques/nucleo/domain-3.webp"
+        ]
+      }
     }
   },
   {
@@ -169,7 +347,24 @@
           "name": "Agujero negro",
           "description": "Abre un campo de atracción con un núcleo que puede capturar al rival."
         }
-      ]
+      ],
+      "special": {
+        "name": "Atajo al vacío",
+        "description": "Abre un agujero negro que atrae y puede capturar al rival.",
+        "images": [
+          "assets/techniques/desfase/special-1.webp",
+          "assets/techniques/desfase/special-2.webp"
+        ]
+      },
+      "domain": {
+        "name": "Pasillo de las Tres Singularidades",
+        "description": "Cada toque coloca un hoyo negro donde elijas (máx. 3). Atraen a la vez tras el aviso y duran 3 s. Corre, salta y esquiva para escapar.",
+        "images": [
+          "assets/techniques/desfase/domain-1.webp",
+          "assets/techniques/desfase/domain-2.webp",
+          "assets/techniques/desfase/domain-3.webp"
+        ]
+      }
     }
   },
   {
@@ -184,7 +379,25 @@
           "name": "Combinación gravitatoria",
           "description": "Concentra sus golpes de boxeo en una secuencia especial."
         }
-      ]
+      ],
+      "special": {
+        "name": "Combinación gravitatoria",
+        "description": "Encadena golpes de boxeo en una combinación gravitatoria.",
+        "images": [
+          "assets/techniques/ralf/special-1.webp",
+          "assets/techniques/ralf/special-2.webp",
+          "assets/techniques/ralf/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Cuadrilátero de gravedad",
+        "description": "Toca el suelo o una tarima para marcar un pozo: reduce los saltos dentro del aviso dorado y después emerge un uppercut dimensional. El rival puede salir de la zona o esquivar el golpe.",
+        "images": [
+          "assets/techniques/ralf/domain-1.webp",
+          "assets/techniques/ralf/domain-2.webp",
+          "assets/techniques/ralf/domain-3.webp"
+        ]
+      }
     }
   },
   {
@@ -199,7 +412,25 @@
           "name": "Rayo temporal",
           "description": "Desata su poder temporal en una descarga especial."
         }
-      ]
+      ],
+      "special": {
+        "name": "Fractura de tiempo",
+        "description": "Dispara una descarga de energía temporal.",
+        "images": [
+          "assets/techniques/chronos/special-1.webp",
+          "assets/techniques/chronos/special-2.webp",
+          "assets/techniques/chronos/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "El segundo sin color",
+        "description": "MUÉVETE y conecta golpes o combos. El rival queda congelado. Al cerrar, 100 % o más y un contacto real activan el crítico.",
+        "images": [
+          "assets/techniques/chronos/domain-1.webp",
+          "assets/techniques/chronos/domain-2.webp",
+          "assets/techniques/chronos/domain-3.webp"
+        ]
+      }
     }
   },
   {
@@ -214,7 +445,25 @@
           "name": "Combos propios",
           "description": "Combina sus ataques en rutas de contacto y remates que se interrumpen al fallar o recibir una respuesta."
         }
-      ]
+      ],
+      "special": {
+        "name": "Reacción en cadena",
+        "description": "Desencadena una reacción de energía contra el rival.",
+        "images": [
+          "assets/techniques/nathy/special-1.webp",
+          "assets/techniques/nathy/special-2.webp",
+          "assets/techniques/nathy/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Cámara de reacción absoluta",
+        "description": "Coloca hasta tres burbujas y toca DETONAR.",
+        "images": [
+          "assets/techniques/nathy/domain-1.webp",
+          "assets/techniques/nathy/domain-2.webp",
+          "assets/techniques/nathy/domain-3.webp"
+        ]
+      }
     }
   },
   {
@@ -229,14 +478,32 @@
           "name": "Garra de expulsión",
           "description": "Extiende su garra y alcanza al rival antes de retraerla."
         }
-      ]
+      ],
+      "special": {
+        "name": "Garra de expulsión",
+        "description": "Extiende su garra para alcanzar al rival y después la retrae.",
+        "images": [
+          "assets/techniques/robotr3s/special-1.webp",
+          "assets/techniques/robotr3s/special-2.webp",
+          "assets/techniques/robotr3s/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Fundición de las Tres Prensas",
+        "description": "TOCA un carril: la prensa avisa y cae. El rival puede correr, saltar y esquivar.",
+        "images": [
+          "assets/techniques/robotr3s/domain-1.webp",
+          "assets/techniques/robotr3s/domain-2.webp",
+          "assets/techniques/robotr3s/domain-3.webp"
+        ]
+      }
     }
   },
   {
     "id": "ian",
     "name": "IAN",
     "subtitle": "Un segundo, cien decisiones",
-    "domain": "Cámara del instante",
+    "domain": "Más rápido que tu sombra",
     "image": "assets/ian.webp",
     "profile": {
       "abilities": [
@@ -248,7 +515,25 @@
           "name": "Lectura del rival",
           "description": "Recuerda una amenaza reciente y prepara una respuesta instantánea."
         }
-      ]
+      ],
+      "special": {
+        "name": "Asalto relámpago",
+        "description": "Lanza un asalto veloz que aprovecha el punto ciego del rival.",
+        "images": [
+          "assets/techniques/ian/special-1.webp",
+          "assets/techniques/ian/special-2.webp",
+          "assets/techniques/ian/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Más rápido que tu sombra",
+        "description": "Corre y cruza al rival con DASH, alternando de lado. Tres cruces cargan Velocidad límite: PODER inicia Vuelta al instante. La entrada puede bloquearse o esquivarse.",
+        "images": [
+          "assets/techniques/ian/domain-1.webp",
+          "assets/techniques/ian/domain-2.webp",
+          "assets/techniques/ian/domain-3.webp"
+        ]
+      }
     }
   },
   {
@@ -263,7 +548,25 @@
           "name": "Paso del pasado",
           "description": "Su poder especial enlaza el combate con sus pasos temporales."
         }
-      ]
+      ],
+      "special": {
+        "name": "Paso del ayer",
+        "description": "Enlaza su ataque con un paso temporal hacia el pasado.",
+        "images": [
+          "assets/techniques/eco/special-1.webp",
+          "assets/techniques/eco/special-2.webp",
+          "assets/techniques/eco/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Punto de retorno",
+        "description": "Guarda un instante y vuelve a pulsar DOMINIO en 10 segundos para rebobinar a ambos. Si vas ganando, deja vencer la marca. Un uso por combate; perder una vida cancela el punto.",
+        "images": [
+          "assets/techniques/eco/domain-1.webp",
+          "assets/techniques/eco/domain-2.webp",
+          "assets/techniques/eco/domain-3.webp"
+        ]
+      }
     }
   },
   {
@@ -282,7 +585,25 @@
           "name": "Sentencia",
           "description": "Eleva al rival y lo devuelve al suelo con un remate telequinético."
         }
-      ]
+      ],
+      "special": {
+        "name": "Sentencia",
+        "description": "Eleva al rival y lo precipita al suelo con un remate telequinético.",
+        "images": [
+          "assets/techniques/regente/special-1.webp",
+          "assets/techniques/regente/special-2.webp",
+          "assets/techniques/regente/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Corte del Regente",
+        "description": "Arrastra para apuntar y suelta para precipitar una roca gigante. La trayectoria se anuncia antes de caer; cada roca acelera hacia el punto elegido.",
+        "images": [
+          "assets/techniques/regente/domain-1.webp",
+          "assets/techniques/regente/domain-2.webp",
+          "assets/techniques/regente/domain-3.webp"
+        ]
+      }
     }
   }
 ]

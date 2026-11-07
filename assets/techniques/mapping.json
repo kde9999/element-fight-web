@@ -1,0 +1,737 @@
+[
+  {
+    "character": "jorge",
+    "asset": "JorgeElectropowerPrepare",
+    "source": "ElementFight/Resources/Assets.xcassets/JorgeElectropowerPrepare.imageset/JorgeElectropowerPrepare.png",
+    "sourceSHA256": "36db1a3af89838db76fde4720ac3a7af0cd530263c7f34110b37fcb7fe39adb4",
+    "web": "assets/techniques/jorge/special-1.webp"
+  },
+  {
+    "character": "jorge",
+    "asset": "EncounterPowerAction_jorge",
+    "source": "ElementFight/Resources/Assets.xcassets/EncounterPowerAction_jorge.imageset/EncounterPowerAction_jorge.png",
+    "sourceSHA256": "470efe86968ec40fa131e5d0af33a928460784cf25dc8bee649cb2cd5eb3ce38",
+    "web": "assets/techniques/jorge/special-2.webp"
+  },
+  {
+    "character": "jorge",
+    "asset": "JorgeElectropowerClimax",
+    "source": "ElementFight/Resources/Assets.xcassets/JorgeElectropowerClimax.imageset/JorgeElectropowerClimax.png",
+    "sourceSHA256": "e814781354cb9c6a48fb9fa3e2488e34665cad4ea55af798a21ecc95aff9ebf8",
+    "web": "assets/techniques/jorge/special-3.webp"
+  },
+  {
+    "character": "jorge",
+    "asset": "JorgeDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/JorgeDomainComic1.imageset/image.png",
+    "sourceSHA256": "86313a53e92ced44daf60a82d933423e38c2ae091c8a9325fae024826b1607b7",
+    "web": "assets/techniques/jorge/domain-1.webp"
+  },
+  {
+    "character": "jorge",
+    "asset": "JorgeDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/JorgeDomainComic2.imageset/image.png",
+    "sourceSHA256": "9a2a3450de050b2259a50ff6c77ec2104b21319ae569f6415756b9ae4a809d54",
+    "web": "assets/techniques/jorge/domain-2.webp"
+  },
+  {
+    "character": "jorge",
+    "asset": "JorgeDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/JorgeDomainComic3.imageset/image.png",
+    "sourceSHA256": "f1b875b50dea1f327da762ccbb4eda6f62161b7cbfc036c1a88ddd2d4926bc03",
+    "web": "assets/techniques/jorge/domain-3.webp"
+  },
+  {
+    "character": "alonso",
+    "asset": "AlonsoSuperComic",
+    "source": "ElementFight/Resources/Assets.xcassets/AlonsoSuperComic.imageset/AlonsoSuperComic.png",
+    "sourceSHA256": "22a69187bdea0457ca2c4e96adcd8433915decc03bbfc49b1cffcb855a4afb2d",
+    "web": "assets/techniques/alonso/special-1.webp"
+  },
+  {
+    "character": "alonso",
+    "asset": "EncounterPowerAction_alonso",
+    "source": "ElementFight/Resources/Assets.xcassets/EncounterPowerAction_alonso.imageset/EncounterPowerAction_alonso.png",
+    "sourceSHA256": "a09c30a8f74f6730d4d3dd996a2a13cb7c8353958dc2dd7e8ad99c7bcec379fd",
+    "web": "assets/techniques/alonso/special-2.webp"
+  },
+  {
+    "character": "alonso",
+    "asset": "AlonsoDomainCritical01",
+    "source": "ElementFight/Resources/Assets.xcassets/AlonsoDomainCritical01.imageset/image.png",
+    "sourceSHA256": "c7229ecab6736912993d3a540625b4700ff56fe87f96b6c6dbdc27b6bd6a840e",
+    "web": "assets/techniques/alonso/special-3.webp"
+  },
+  {
+    "character": "alonso",
+    "asset": "AlonsoDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/AlonsoDomainComic1.imageset/image.png",
+    "sourceSHA256": "97f3a26b304297aad9df67252406df8288a35271c542150da71be81376b04c37",
+    "web": "assets/techniques/alonso/domain-1.webp"
+  },
+  {
+    "character": "alonso",
+    "asset": "AlonsoDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/AlonsoDomainComic2.imageset/image.png",
+    "sourceSHA256": "11930111cd47919b4ad38f20e41b5ccf7fa86ce621cb7e9b29d6522bc5cff89a",
+    "web": "assets/techniques/alonso/domain-2.webp"
+  },
+  {
+    "character": "alonso",
+    "asset": "AlonsoDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/AlonsoDomainComic3.imageset/image.png",
+    "sourceSHA256": "0245171b18950e89146c8da03303f42198007b692693313c4e16976e332ac806",
+    "web": "assets/techniques/alonso/domain-3.webp"
+  },
+  {
+    "character": "mai",
+    "asset": "MaiSuperComic",
+    "source": "ElementFight/Resources/Assets.xcassets/MaiSuperComic.imageset/MaiSuperComic.png",
+    "sourceSHA256": "b0bb28d13334e4dd42af884e846540801fcde673370f5176b38720796a690f00",
+    "web": "assets/techniques/mai/special-1.webp"
+  },
+  {
+    "character": "mai",
+    "asset": "EncounterPowerAction_mai",
+    "source": "ElementFight/Resources/Assets.xcassets/EncounterPowerAction_mai.imageset/EncounterPowerAction_mai.png",
+    "sourceSHA256": "8e83d6e5336c9d588644b41c46185a730e8e3904cb62b9caa93f4d9ef5c40896",
+    "web": "assets/techniques/mai/special-2.webp"
+  },
+  {
+    "character": "mai",
+    "asset": "MaiDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/MaiDomainComic1.imageset/image.png",
+    "sourceSHA256": "e681747aba94742f6fab9c9556802377e7137069f751f0092875888ec97280ae",
+    "web": "assets/techniques/mai/domain-1.webp"
+  },
+  {
+    "character": "mai",
+    "asset": "MaiDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/MaiDomainComic2.imageset/image.png",
+    "sourceSHA256": "95539a0289985cb3f7088ab066424bb7bc660d89cb920d06798b61ed567c18a4",
+    "web": "assets/techniques/mai/domain-2.webp"
+  },
+  {
+    "character": "mai",
+    "asset": "MaiDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/MaiDomainComic3.imageset/image.png",
+    "sourceSHA256": "5efbb5d0666717f2f222e12ed8d1fead76259729e90c902f275ec6652a36df1b",
+    "web": "assets/techniques/mai/domain-3.webp"
+  },
+  {
+    "character": "karina",
+    "asset": "KarinaSuperComic",
+    "source": "ElementFight/Resources/Assets.xcassets/KarinaSuperComic.imageset/art.png",
+    "sourceSHA256": "d558d8c8c6d1db6c8634d662474b51364a9e89b3a8ac15a3ba37e4ec1400aa71",
+    "web": "assets/techniques/karina/special-1.webp"
+  },
+  {
+    "character": "karina",
+    "asset": "KarinaDomainCritical01",
+    "source": "ElementFight/Resources/Assets.xcassets/KarinaDomainCritical01.imageset/image.png",
+    "sourceSHA256": "580ff4ee3c5f931613e9084a8deaa635e987dd3bf7ffb663cc7c0f2ace86a490",
+    "web": "assets/techniques/karina/special-2.webp"
+  },
+  {
+    "character": "karina",
+    "asset": "KarinaDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/KarinaDomainComic1.imageset/image.png",
+    "sourceSHA256": "1b90ff897e68218cff1d4cee4ea70231f2ff3e29eeba7332e2f77a1d1b82557d",
+    "web": "assets/techniques/karina/domain-1.webp"
+  },
+  {
+    "character": "karina",
+    "asset": "KarinaDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/KarinaDomainComic2.imageset/image.png",
+    "sourceSHA256": "5996a5504aaf7a8c93188870cfa0addad55a462c166557b1719f46a74ea0a337",
+    "web": "assets/techniques/karina/domain-2.webp"
+  },
+  {
+    "character": "karina",
+    "asset": "KarinaDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/KarinaDomainComic3.imageset/image.png",
+    "sourceSHA256": "fe6d57e92a411e38622ba525801ebf345ec972c41f69cf03c0b27de9d3bbdbe4",
+    "web": "assets/techniques/karina/domain-3.webp"
+  },
+  {
+    "character": "umbra",
+    "asset": "UmbraSuperComic",
+    "source": "ElementFight/Resources/Assets.xcassets/UmbraSuperComic.imageset/image.png",
+    "sourceSHA256": "ef2493dd869339e4cb552f8349defc89ffb3f4365bdf4cd02d02ccad3f2400e2",
+    "web": "assets/techniques/umbra/special-1.webp"
+  },
+  {
+    "character": "umbra",
+    "asset": "UmbraPowerComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/UmbraPowerComic2.imageset/image.png",
+    "sourceSHA256": "1d59b93f2edf254c1079ebf32c814fcee18e673de404d0e8617d04755524bdaa",
+    "web": "assets/techniques/umbra/special-2.webp"
+  },
+  {
+    "character": "umbra",
+    "asset": "UmbraPowerComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/UmbraPowerComic3.imageset/image.png",
+    "sourceSHA256": "29a5b2ec65fc65b643ea80211329e61f9b2b87f96a6eb6966b9afa0543f052f0",
+    "web": "assets/techniques/umbra/special-3.webp"
+  },
+  {
+    "character": "umbra",
+    "asset": "UmbraDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/UmbraDomainComic1.imageset/image.png",
+    "sourceSHA256": "38a18fffa2a48b7ca0e4c3c22d3744c96c8ebf77da1847ea0c33b8d4c33d86ee",
+    "web": "assets/techniques/umbra/domain-1.webp"
+  },
+  {
+    "character": "umbra",
+    "asset": "UmbraDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/UmbraDomainComic2.imageset/image.png",
+    "sourceSHA256": "1b17b30e7c0e5a7bdc7b6ea188a4104ddcd68151cd0fc67b79a8ff1ecbaab047",
+    "web": "assets/techniques/umbra/domain-2.webp"
+  },
+  {
+    "character": "umbra",
+    "asset": "UmbraDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/UmbraDomainComic3.imageset/image.png",
+    "sourceSHA256": "4fb878164c884f4e884392bc54e44db73d3f722cdfdfe4b994c272967dad04ef",
+    "web": "assets/techniques/umbra/domain-3.webp"
+  },
+  {
+    "character": "lunaro",
+    "asset": "LunaroSuperComic",
+    "source": "ElementFight/Resources/Assets.xcassets/LunaroSuperComic.imageset/LunaroSuperComic.png",
+    "sourceSHA256": "7c14ca13c66fea4fed4371a5347fbdf2d09f7f15d482212b625177c06364039d",
+    "web": "assets/techniques/lunaro/special-1.webp"
+  },
+  {
+    "character": "lunaro",
+    "asset": "EncounterPowerAction_lunaro",
+    "source": "ElementFight/Resources/Assets.xcassets/EncounterPowerAction_lunaro.imageset/EncounterPowerAction_lunaro.png",
+    "sourceSHA256": "1d5f78100d9c1ba6114cc57ef348f1ffa98e3224a4d62b23ad8b147ceb62eadd",
+    "web": "assets/techniques/lunaro/special-2.webp"
+  },
+  {
+    "character": "lunaro",
+    "asset": "LunaroDomainCritical01",
+    "source": "ElementFight/Resources/Assets.xcassets/LunaroDomainCritical01.imageset/image.png",
+    "sourceSHA256": "0332a98ca1ba823e7497804bcb8236b02586849d7684eff017ee965d436a3a63",
+    "web": "assets/techniques/lunaro/special-3.webp"
+  },
+  {
+    "character": "lunaro",
+    "asset": "LunaroDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/LunaroDomainComic1.imageset/image.png",
+    "sourceSHA256": "8e533847e230f36b23179ac554ecacb3520da9ca6e9c1ed645983ddd3221c0aa",
+    "web": "assets/techniques/lunaro/domain-1.webp"
+  },
+  {
+    "character": "lunaro",
+    "asset": "LunaroDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/LunaroDomainComic2.imageset/image.png",
+    "sourceSHA256": "aed424f991e261afe88304482e435e233bbb337c53e9ee3b622a0014f061daa6",
+    "web": "assets/techniques/lunaro/domain-2.webp"
+  },
+  {
+    "character": "lunaro",
+    "asset": "LunaroDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/LunaroDomainComic3.imageset/invocation-v2.png",
+    "sourceSHA256": "def85161a71038f8df862f36edcd41af89c0a594e05770d81415b8a60dd4c411",
+    "web": "assets/techniques/lunaro/domain-3.webp"
+  },
+  {
+    "character": "ferro",
+    "asset": "FerroSuperComic",
+    "source": "ElementFight/Resources/Assets.xcassets/FerroSuperComic.imageset/FerroSuperComic.jpg",
+    "sourceSHA256": "0a384f2929d4c35ef412906f0ef49117a64cf11b5d8ed92ec0ce8a36b3269863",
+    "web": "assets/techniques/ferro/special-1.webp"
+  },
+  {
+    "character": "ferro",
+    "asset": "EncounterPowerAction_ferro",
+    "source": "ElementFight/Resources/Assets.xcassets/EncounterPowerAction_ferro.imageset/EncounterPowerAction_ferro.png",
+    "sourceSHA256": "9926538d7d71f51f212c1c2d510943d68f52bb0f0b1dbeb74e02b87a97ab0a0b",
+    "web": "assets/techniques/ferro/special-2.webp"
+  },
+  {
+    "character": "ferro",
+    "asset": "FerroDomainCritical01",
+    "source": "ElementFight/Resources/Assets.xcassets/FerroDomainCritical01.imageset/image.png",
+    "sourceSHA256": "b2375b0d6c84b1211d7f0aad8c9e48d9a3fd038707f1b414f8cae18746f1088b",
+    "web": "assets/techniques/ferro/special-3.webp"
+  },
+  {
+    "character": "ferro",
+    "asset": "FerroDomainInertiaComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/FerroDomainInertiaComic1.imageset/image.png",
+    "sourceSHA256": "ac2d90fb0dbe54fca166418ac7c532da272b0879f4a0e08251d749fd04ab2015",
+    "web": "assets/techniques/ferro/domain-1.webp"
+  },
+  {
+    "character": "ferro",
+    "asset": "FerroDomainInertiaComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/FerroDomainInertiaComic2.imageset/image.png",
+    "sourceSHA256": "0342e9b0d9189c82319dc96f9d881f17cb80f112b037954fa34d02dac870c9de",
+    "web": "assets/techniques/ferro/domain-2.webp"
+  },
+  {
+    "character": "ferro",
+    "asset": "FerroDomainInertiaComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/FerroDomainInertiaComic3.imageset/image.png",
+    "sourceSHA256": "12bf2842beb63291cfc53cc37b0bc9f565871ba404d2467abbbf7a2e3dda7b1c",
+    "web": "assets/techniques/ferro/domain-3.webp"
+  },
+  {
+    "character": "roco",
+    "asset": "RocoSuperComic",
+    "source": "ElementFight/Resources/Assets.xcassets/RocoSuperComic.imageset/RocoSuperComic.png",
+    "sourceSHA256": "3d15d5f4348bcd5a20abbcca3eeae1f87eb5fd0dc8d46364696be197843a3a36",
+    "web": "assets/techniques/roco/special-1.webp"
+  },
+  {
+    "character": "roco",
+    "asset": "RocoPowerAction",
+    "source": "ElementFight/Resources/Assets.xcassets/RocoPowerAction.imageset/RocoPowerAction.png",
+    "sourceSHA256": "3e210888513e996c6b4769534914d875001f3beeb7daf245acde722793b9ace9",
+    "web": "assets/techniques/roco/special-2.webp"
+  },
+  {
+    "character": "roco",
+    "asset": "RocoDomainCritical01",
+    "source": "ElementFight/Resources/Assets.xcassets/RocoDomainCritical01.imageset/RocoDomainCritical01.png",
+    "sourceSHA256": "8e981f3f2c6d9525046be6be28f7798b839ea61f56e37475cc2d8968e82c0041",
+    "web": "assets/techniques/roco/special-3.webp"
+  },
+  {
+    "character": "roco",
+    "asset": "RocoDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/RocoDomainComic1.imageset/RocoDomainComic1.png",
+    "sourceSHA256": "6e7854d430ae31adc4c55e80807f3e54547e1f65917d4da5a3a4ee9928dbcdd7",
+    "web": "assets/techniques/roco/domain-1.webp"
+  },
+  {
+    "character": "roco",
+    "asset": "RocoDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/RocoDomainComic2.imageset/RocoDomainComic2.png",
+    "sourceSHA256": "a95a68ad79578385a25cc5b07e713d461a63820a0943030d392e7c4b70e894e4",
+    "web": "assets/techniques/roco/domain-2.webp"
+  },
+  {
+    "character": "roco",
+    "asset": "RocoDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/RocoDomainComic3.imageset/RocoDomainComic3.png",
+    "sourceSHA256": "4b9ddbe88853de85ea3ac154ea8e0dc2cd30d2fb9020652254cdde23e68adcab",
+    "web": "assets/techniques/roco/domain-3.webp"
+  },
+  {
+    "character": "vela",
+    "asset": "VelaSuperComic",
+    "source": "ElementFight/Resources/Assets.xcassets/VelaSuperComic.imageset/VelaSuperComic.png",
+    "sourceSHA256": "0e5d0330b9540d7be93819a9bf258073d15bf9abf64c380d125fbd549dcdbb68",
+    "web": "assets/techniques/vela/special-1.webp"
+  },
+  {
+    "character": "vela",
+    "asset": "EncounterPowerAction_vela",
+    "source": "ElementFight/Resources/Assets.xcassets/EncounterPowerAction_vela.imageset/EncounterPowerAction_vela.png",
+    "sourceSHA256": "e3821129bf957692a682e61b30ca435cf1d847809421bfdbc21a9270d3fbc77e",
+    "web": "assets/techniques/vela/special-2.webp"
+  },
+  {
+    "character": "vela",
+    "asset": "VelaDomainCritical01",
+    "source": "ElementFight/Resources/Assets.xcassets/VelaDomainCritical01.imageset/image.png",
+    "sourceSHA256": "cc51e0706c8ed541bc6a8caae1c92ca160dae09db1c704b50033fe3624fdd557",
+    "web": "assets/techniques/vela/special-3.webp"
+  },
+  {
+    "character": "vela",
+    "asset": "VelaDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/VelaDomainComic1.imageset/image.png",
+    "sourceSHA256": "a7cd57d52c4202ae5fd2c92dc4ab3bb84673ceb9b294b330bea59703593ceee7",
+    "web": "assets/techniques/vela/domain-1.webp"
+  },
+  {
+    "character": "vela",
+    "asset": "VelaDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/VelaDomainComic2.imageset/image.png",
+    "sourceSHA256": "02bb551c0630976a9c374c46a938b64278409f282206e507b15159ae4a0f7eb8",
+    "web": "assets/techniques/vela/domain-2.webp"
+  },
+  {
+    "character": "vela",
+    "asset": "VelaDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/VelaDomainComic3.imageset/image.png",
+    "sourceSHA256": "17c33dd69f74619ec886b64985c6dc866752e806c0806a49dc196e0416166648",
+    "web": "assets/techniques/vela/domain-3.webp"
+  },
+  {
+    "character": "nucleo",
+    "asset": "NucleoSuperComic",
+    "source": "ElementFight/Resources/Assets.xcassets/NucleoSuperComic.imageset/NucleoSuperComic.png",
+    "sourceSHA256": "5fa035a523de0915bc9caf29cfaf0b5fc12f65f84a963d11257a987ebafd131f",
+    "web": "assets/techniques/nucleo/special-1.webp"
+  },
+  {
+    "character": "nucleo",
+    "asset": "EncounterPowerAction_nucleo",
+    "source": "ElementFight/Resources/Assets.xcassets/EncounterPowerAction_nucleo.imageset/EncounterPowerAction_nucleo.png",
+    "sourceSHA256": "b9ea046951da856a944e24286dac0f9717720cbc6114fe885404ffaf46d845df",
+    "web": "assets/techniques/nucleo/special-2.webp"
+  },
+  {
+    "character": "nucleo",
+    "asset": "NucleoDomainCritical01",
+    "source": "ElementFight/Resources/Assets.xcassets/NucleoDomainCritical01.imageset/image.png",
+    "sourceSHA256": "8a03378f8fbf88de50895169fa55cb18b064a43a6a7975ff9796305d6644c662",
+    "web": "assets/techniques/nucleo/special-3.webp"
+  },
+  {
+    "character": "nucleo",
+    "asset": "NucleoDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/NucleoDomainComic1.imageset/image.png",
+    "sourceSHA256": "2e1f02cc503a27bf9436d19cb87c6f429e56a7cc1d08ced99557565cd9819ba0",
+    "web": "assets/techniques/nucleo/domain-1.webp"
+  },
+  {
+    "character": "nucleo",
+    "asset": "NucleoDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/NucleoDomainComic2.imageset/image.png",
+    "sourceSHA256": "5ac25dd6c05e722e0cf49c44eda20a9e73d7f255c870200404cf0a59bf9321d5",
+    "web": "assets/techniques/nucleo/domain-2.webp"
+  },
+  {
+    "character": "nucleo",
+    "asset": "NucleoDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/NucleoDomainComic3.imageset/image.png",
+    "sourceSHA256": "da86aefaf479062988795a8a7d781c57d66902373ef5a175e1f3b82e4b141408",
+    "web": "assets/techniques/nucleo/domain-3.webp"
+  },
+  {
+    "character": "desfase",
+    "asset": "DesfaseSuperComic",
+    "source": "ElementFight/Resources/Assets.xcassets/DesfaseSuperComic.imageset/DesfaseSuperComic.png",
+    "sourceSHA256": "f56cdbe56d0cb88350e8b1cb6a1f977d79bc298ee5b1f68c03666b70e1307a36",
+    "web": "assets/techniques/desfase/special-1.webp"
+  },
+  {
+    "character": "desfase",
+    "asset": "DesfaseDomainCritical01",
+    "source": "ElementFight/Resources/Assets.xcassets/DesfaseDomainCritical01.imageset/DesfaseDomainCritical01.png",
+    "sourceSHA256": "b7f2d774a0eec9dedcd1c574f47d74f040a1d68c33a7f5c88ee184d709bc55a9",
+    "web": "assets/techniques/desfase/special-2.webp"
+  },
+  {
+    "character": "desfase",
+    "asset": "DesfaseDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/DesfaseDomainComic1.imageset/DesfaseDomainComic1.png",
+    "sourceSHA256": "f5170feb10847ec5d4d143ef2606b0f95a9f9cd19d4ef6a9d3a33f8174e7c588",
+    "web": "assets/techniques/desfase/domain-1.webp"
+  },
+  {
+    "character": "desfase",
+    "asset": "DesfaseDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/DesfaseDomainComic2.imageset/DesfaseDomainComic2.png",
+    "sourceSHA256": "be618e2c07168c4052cd65c757e6288be678f619991a05ffbf6b786c6c285b28",
+    "web": "assets/techniques/desfase/domain-2.webp"
+  },
+  {
+    "character": "desfase",
+    "asset": "DesfaseDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/DesfaseDomainComic3.imageset/DesfaseDomainComic3.png",
+    "sourceSHA256": "74d5778cb18277cce2bc2718e578a0d10868d9c441654222bd9d808b532706b6",
+    "web": "assets/techniques/desfase/domain-3.webp"
+  },
+  {
+    "character": "ralf",
+    "asset": "RalfSuperComic",
+    "source": "ElementFight/Resources/Assets.xcassets/RalfSuperComic.imageset/RalfSuperComic.png",
+    "sourceSHA256": "da2853344a8a5a098d2f3b2305e7a30de2649bdbbecda2be49bef2fa4df17ed8",
+    "web": "assets/techniques/ralf/special-1.webp"
+  },
+  {
+    "character": "ralf",
+    "asset": "RalfPowerAction",
+    "source": "ElementFight/Resources/Assets.xcassets/RalfPowerAction.imageset/RalfPowerAction.png",
+    "sourceSHA256": "5734d8955c3c46da73c7f02bac76d6bc6b52fa05448426b408b90a08e250e64c",
+    "web": "assets/techniques/ralf/special-2.webp"
+  },
+  {
+    "character": "ralf",
+    "asset": "RalfPowerContact",
+    "source": "ElementFight/Resources/Assets.xcassets/RalfPowerContact.imageset/RalfPowerContact.png",
+    "sourceSHA256": "414816dd34707014cb9be766c379b05ca973fe8916a76354a462f3070f68775a",
+    "web": "assets/techniques/ralf/special-3.webp"
+  },
+  {
+    "character": "ralf",
+    "asset": "RalfDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/RalfDomainComic1.imageset/RalfDomainComic1.png",
+    "sourceSHA256": "d907318b4790293b34e1191851010e4d199ff4c8ed024aeb88447ad13c0f2d25",
+    "web": "assets/techniques/ralf/domain-1.webp"
+  },
+  {
+    "character": "ralf",
+    "asset": "RalfDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/RalfDomainComic2.imageset/RalfDomainComic2.png",
+    "sourceSHA256": "5022b3047539472c939c69f6c6be4154fb7e8c171d89db79b10b41d6437a54ae",
+    "web": "assets/techniques/ralf/domain-2.webp"
+  },
+  {
+    "character": "ralf",
+    "asset": "RalfDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/RalfDomainComic3.imageset/RalfDomainComic3.png",
+    "sourceSHA256": "752cdfe8a837ca8a5ab99266e584772d6103d78b61c3f330ec6c48cd7ea624c7",
+    "web": "assets/techniques/ralf/domain-3.webp"
+  },
+  {
+    "character": "chronos",
+    "asset": "PowerChronosPrepare",
+    "source": "ElementFight/Resources/Assets.xcassets/PowerChronosPrepare.imageset/PowerChronosPrepare.png",
+    "sourceSHA256": "2b3aa7e8b88e28ea93ce70ab7457b135c27208f5fb9fa9e7d788bac39bdc525d",
+    "web": "assets/techniques/chronos/special-1.webp"
+  },
+  {
+    "character": "chronos",
+    "asset": "PowerChronosRelease",
+    "source": "ElementFight/Resources/Assets.xcassets/PowerChronosRelease.imageset/PowerChronosRelease.png",
+    "sourceSHA256": "4f00589493cea32e2446f0e70f765a3e56364aa4a5a80bf482b053866f273408",
+    "web": "assets/techniques/chronos/special-2.webp"
+  },
+  {
+    "character": "chronos",
+    "asset": "PowerChronosClimax",
+    "source": "ElementFight/Resources/Assets.xcassets/PowerChronosClimax.imageset/PowerChronosClimax.png",
+    "sourceSHA256": "3b11d125e72dfd3df08b5268d3725509ff073069cd860fc3dbbf6a411150793d",
+    "web": "assets/techniques/chronos/special-3.webp"
+  },
+  {
+    "character": "chronos",
+    "asset": "ChronosDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/ChronosDomainComic1.imageset/ChronosDomainComic1.png",
+    "sourceSHA256": "162a4b04afd3832c99099ddbab37da53139160bafbed9a4a645fcb6342c0a13c",
+    "web": "assets/techniques/chronos/domain-1.webp"
+  },
+  {
+    "character": "chronos",
+    "asset": "ChronosDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/ChronosDomainComic2.imageset/ChronosDomainComic2.png",
+    "sourceSHA256": "a76f4a1c2dacb360c3e6c5a2ac9b106e60f547cc5307aa626e9baac89d89d81a",
+    "web": "assets/techniques/chronos/domain-2.webp"
+  },
+  {
+    "character": "chronos",
+    "asset": "ChronosDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/ChronosDomainComic3.imageset/ChronosDomainComic3.png",
+    "sourceSHA256": "59bc11352495290015bd128ca1f3a3eec335a5a2a57057f3b7956707c8469ba5",
+    "web": "assets/techniques/chronos/domain-3.webp"
+  },
+  {
+    "character": "nathy",
+    "asset": "PowerNathyPrepare",
+    "source": "ElementFight/Resources/Assets.xcassets/PowerNathyPrepare.imageset/PowerNathyPrepare.png",
+    "sourceSHA256": "2e02b9db5a0ccde64f4a51c6695b6688d4c21d47b80a3febfe714277543aef4d",
+    "web": "assets/techniques/nathy/special-1.webp"
+  },
+  {
+    "character": "nathy",
+    "asset": "NathySuperComic",
+    "source": "ElementFight/Resources/Assets.xcassets/NathySuperComic.imageset/NathySuperComic.png",
+    "sourceSHA256": "4dd22051973b7f3a39d138ac06bc0d5537a63e9d9c9de9371e4705733a4a94b4",
+    "web": "assets/techniques/nathy/special-2.webp"
+  },
+  {
+    "character": "nathy",
+    "asset": "PowerNathyClimax",
+    "source": "ElementFight/Resources/Assets.xcassets/PowerNathyClimax.imageset/PowerNathyClimax.png",
+    "sourceSHA256": "4f9108a6e60e88f7d7a2c202c5b0712d24d7616501bc9ddcd4d72b1eb995b927",
+    "web": "assets/techniques/nathy/special-3.webp"
+  },
+  {
+    "character": "nathy",
+    "asset": "NathyDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/NathyDomainComic1.imageset/image.png",
+    "sourceSHA256": "6e9f3b7ee61a539a13def37fd9927cdc6aff5f45db8f4cf03193a44c5442feb4",
+    "web": "assets/techniques/nathy/domain-1.webp"
+  },
+  {
+    "character": "nathy",
+    "asset": "NathyDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/NathyDomainComic2.imageset/image.png",
+    "sourceSHA256": "b10649faa2ec43068aef8111c19b1a64902ee4ac353cfbfbbbff962edd43adde",
+    "web": "assets/techniques/nathy/domain-2.webp"
+  },
+  {
+    "character": "nathy",
+    "asset": "NathyDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/NathyDomainComic3.imageset/image.png",
+    "sourceSHA256": "27f79a86bad822cd035e0faa5c7e967935541717625fac545a166993765f74fd",
+    "web": "assets/techniques/nathy/domain-3.webp"
+  },
+  {
+    "character": "robotr3s",
+    "asset": "PowerRobotr3sPrepare",
+    "source": "ElementFight/Resources/Assets.xcassets/PowerRobotr3sPrepare.imageset/PowerRobotr3sPrepare.png",
+    "sourceSHA256": "0b6ae0cb04895cc341afdaa09a319f351ef599bb42efb4e9c6b7d31421e48683",
+    "web": "assets/techniques/robotr3s/special-1.webp"
+  },
+  {
+    "character": "robotr3s",
+    "asset": "PowerRobotr3sRelease",
+    "source": "ElementFight/Resources/Assets.xcassets/PowerRobotr3sRelease.imageset/PowerRobotr3sRelease.png",
+    "sourceSHA256": "7bece1c7f6961a29c118bccdd2aa5fac08e266efe2aa81a43bcb8d98697a0c30",
+    "web": "assets/techniques/robotr3s/special-2.webp"
+  },
+  {
+    "character": "robotr3s",
+    "asset": "PowerRobotr3sClimax",
+    "source": "ElementFight/Resources/Assets.xcassets/PowerRobotr3sClimax.imageset/PowerRobotr3sClimax.png",
+    "sourceSHA256": "e124ae312503e5577eac3af865939cfd6a5cce392752a338b6b825a5f9d3df88",
+    "web": "assets/techniques/robotr3s/special-3.webp"
+  },
+  {
+    "character": "robotr3s",
+    "asset": "Robotr3sDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/Robotr3sDomainComic1.imageset/Robotr3sDomainComic1.png",
+    "sourceSHA256": "c8b31d0e444173f6216bf2cd37008536cffead2f5b2620586308de9e9d7294b6",
+    "web": "assets/techniques/robotr3s/domain-1.webp"
+  },
+  {
+    "character": "robotr3s",
+    "asset": "Robotr3sDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/Robotr3sDomainComic2.imageset/Robotr3sDomainComic2.png",
+    "sourceSHA256": "9a64a74951e26d45086023a7a8e2a41e1092185e5f9130cc63bee4e25dbccee8",
+    "web": "assets/techniques/robotr3s/domain-2.webp"
+  },
+  {
+    "character": "robotr3s",
+    "asset": "Robotr3sDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/Robotr3sDomainComic3.imageset/Robotr3sDomainComic3.png",
+    "sourceSHA256": "cebf8079015e29633aba857d92d5cad1d09eb9e64edd893d60c20b1c755da747",
+    "web": "assets/techniques/robotr3s/domain-3.webp"
+  },
+  {
+    "character": "ian",
+    "asset": "PowerIanPrepare",
+    "source": "ElementFight/Resources/Assets.xcassets/PowerIanPrepare.imageset/PowerIanPrepare.png",
+    "sourceSHA256": "f23879504eaac9486d4ca6bde1d49772c1451626ec147c2f773e57fa775dd498",
+    "web": "assets/techniques/ian/special-1.webp"
+  },
+  {
+    "character": "ian",
+    "asset": "PowerIanRelease",
+    "source": "ElementFight/Resources/Assets.xcassets/PowerIanRelease.imageset/PowerIanRelease.png",
+    "sourceSHA256": "d1be498dd4480a449b0d581f70cd66db71fa0819af8c57dacf382fbe7e3c8b22",
+    "web": "assets/techniques/ian/special-2.webp"
+  },
+  {
+    "character": "ian",
+    "asset": "PowerIanClimax",
+    "source": "ElementFight/Resources/Assets.xcassets/PowerIanClimax.imageset/PowerIanClimax.png",
+    "sourceSHA256": "368450bcd53fea65faa58391c486de239ef77a68ed4d9fd1e19b4102ecc27912",
+    "web": "assets/techniques/ian/special-3.webp"
+  },
+  {
+    "character": "ian",
+    "asset": "IanVelocityDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/IanVelocityDomainComic1.imageset/IanVelocityDomainComic1.png",
+    "sourceSHA256": "84482ebfda02ac08a8fbbeb41c23304ddca538585d3f090ea5e9da68883a842b",
+    "web": "assets/techniques/ian/domain-1.webp"
+  },
+  {
+    "character": "ian",
+    "asset": "IanVelocityDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/IanVelocityDomainComic2.imageset/IanVelocityDomainComic2.png",
+    "sourceSHA256": "4c643edbfb4fd13a95cce899e1aadc219c4e05dbaeb333675a947ed0e7d79b34",
+    "web": "assets/techniques/ian/domain-2.webp"
+  },
+  {
+    "character": "ian",
+    "asset": "IanVelocityDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/IanVelocityDomainComic3.imageset/IanVelocityDomainComic3.png",
+    "sourceSHA256": "2fda3212b365d9d66fe2af66e1c3b4e0191d2baf1d7ffa03c673691bee46863b",
+    "web": "assets/techniques/ian/domain-3.webp"
+  },
+  {
+    "character": "eco",
+    "asset": "EcoSuperComic",
+    "source": "ElementFight/Resources/Assets.xcassets/EcoSuperComic.imageset/EcoSuperComic.png",
+    "sourceSHA256": "ee050365cec6ea2bf4ce8d9ae12c8087a663c36f233910704346c3f39db3e00b",
+    "web": "assets/techniques/eco/special-1.webp"
+  },
+  {
+    "character": "eco",
+    "asset": "EcoPowerComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/EcoPowerComic2.imageset/EcoPowerComic2.png",
+    "sourceSHA256": "f84787673eb72959014401733fecf109ca0e8eb1efd163e2358c2e6e0899debd",
+    "web": "assets/techniques/eco/special-2.webp"
+  },
+  {
+    "character": "eco",
+    "asset": "EcoPowerComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/EcoPowerComic3.imageset/EcoPowerComic3.png",
+    "sourceSHA256": "7c5df7e1c5cb55e536305af7dd991e107627e671ad380dc1d8f68c62e74b102e",
+    "web": "assets/techniques/eco/special-3.webp"
+  },
+  {
+    "character": "eco",
+    "asset": "EcoDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/EcoDomainComic1.imageset/EcoDomainComic1.png",
+    "sourceSHA256": "8e859386d95ce5260f85089218996e958c3de878e5b7d7046eab2c570b7a4213",
+    "web": "assets/techniques/eco/domain-1.webp"
+  },
+  {
+    "character": "eco",
+    "asset": "EcoDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/EcoDomainComic2.imageset/EcoDomainComic2.png",
+    "sourceSHA256": "bc27790de19172be48eb2a83e26cc4bd24b73e36efe3f6d071d2024f05a93aa3",
+    "web": "assets/techniques/eco/domain-2.webp"
+  },
+  {
+    "character": "eco",
+    "asset": "EcoDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/EcoDomainComic3.imageset/EcoDomainComic3.png",
+    "sourceSHA256": "4f4d8837bebe21ca33e3e9016a1889b0e5033c188ac559c6544bd7798882ca1f",
+    "web": "assets/techniques/eco/domain-3.webp"
+  },
+  {
+    "character": "regente",
+    "asset": "RegentePowerPrepare",
+    "source": "ElementFight/Resources/Assets.xcassets/RegentePowerPrepare.imageset/RegentePowerPrepare.png",
+    "sourceSHA256": "04b806fbfd172f8d8809366ee0f603df9423038c82462740b0cd09e22bfbbae6",
+    "web": "assets/techniques/regente/special-1.webp"
+  },
+  {
+    "character": "regente",
+    "asset": "RegentePowerLift",
+    "source": "ElementFight/Resources/Assets.xcassets/RegentePowerLift.imageset/RegentePowerLift.png",
+    "sourceSHA256": "9b03ab87e3fdc0ece62a46a8c757cd621526e505f105129827bc622abf54ffa8",
+    "web": "assets/techniques/regente/special-2.webp"
+  },
+  {
+    "character": "regente",
+    "asset": "RegentePowerSlam",
+    "source": "ElementFight/Resources/Assets.xcassets/RegentePowerSlam.imageset/RegentePowerSlam.png",
+    "sourceSHA256": "75271aa4c7903e56435a41bfca101a0ece01b8a1fd6d2c849fd4b024c2d2f7c2",
+    "web": "assets/techniques/regente/special-3.webp"
+  },
+  {
+    "character": "regente",
+    "asset": "RegenteDomainComic1",
+    "source": "ElementFight/Resources/Assets.xcassets/RegenteDomainComic1.imageset/RegenteDomainComic1.png",
+    "sourceSHA256": "43cc3612a6d7e983e5ff53698e38b42fac32cb5e7d6be863d699c1047a870ecc",
+    "web": "assets/techniques/regente/domain-1.webp"
+  },
+  {
+    "character": "regente",
+    "asset": "RegenteDomainComic2",
+    "source": "ElementFight/Resources/Assets.xcassets/RegenteDomainComic2.imageset/RegenteDomainComic2.png",
+    "sourceSHA256": "a56a63b2fbb5d11f8385e7ca2f97a8df7aa4a712617aaa60849d54fc6596d9bc",
+    "web": "assets/techniques/regente/domain-2.webp"
+  },
+  {
+    "character": "regente",
+    "asset": "RegenteDomainComic3",
+    "source": "ElementFight/Resources/Assets.xcassets/RegenteDomainComic3.imageset/RegenteDomainComic3.png",
+    "sourceSHA256": "b9c01a8fa6012d72e531c88c1da0839c2d26bef4becb62c48d3569822adff7bc",
+    "web": "assets/techniques/regente/domain-3.webp"
+  }
+]

@@ -267,7 +267,7 @@ $$('[data-article]').forEach(button=>button.addEventListener('click',()=>{
   openDialog(`Noticias · ${article.category}`,`<article class="article-body"><img class="article-image" src="${article.image}" alt="${article.title}" ${imageAttrs(article.image, '(max-width: 700px) 100vw, 50vw')}><p class="article-meta">${article.date}</p><h2 id="dialog-title">${article.title}</h2>${article.paragraphs.map(p=>`<p>${p}</p>`).join('')}<p class="article-source">${article.source}</p></article>`);
 }));
 
-function openCharacterProfile(id) {
+function openCharacterProfile(id, section = "abilities") {
   const character = rosterCharacters.find(item => item.id === id);
   if (!character?.profile) return;
   openDialog('Plantel · Ficha del personaje', `
@@ -278,10 +278,18 @@ function openCharacterProfile(id) {
         <label class="profile-switch">Cambiar personaje<select id="profile-character">${rosterCharacters.map(item => `<option value="${item.id}" ${item.id === id ? 'selected' : ''}>${escapeHTML(item.name)}</option>`).join('')}</select></label>
       </div>
       <div class="profile-intro"><p>${escapeHTML(descriptions[id] || character.subtitle)}</p></div>
-      <div class="profile-traits">${character.profile.abilities.map(ability => `<div><h4>${escapeHTML(ability.name)}</h4><p>${escapeHTML(ability.description)}</p></div>`).join('')}</div>
+      <nav class="profile-sections" aria-label="Explorar personaje">
+        ${[['abilities','Pasiva y habilidades'],['special','Especial'],['domain','Dominio']].map(([key,label]) => `<button type="button" data-profile-section="${key}" aria-pressed="${section === key}">${label}</button>`).join('')}
+      </nav>
+      ${section === 'abilities' ? `<p class="technique-explainer">Las pasivas son efectos propios del personaje que acompañan su forma de luchar. Aquí puedes conocer sus rasgos y habilidades.</p><div class="profile-traits">${character.profile.abilities.map(ability => `<div>${id === 'jorge' ? '<p class="ability-kind">Pasiva</p>' : ''}<h4>${escapeHTML(ability.name)}</h4><p>${escapeHTML(ability.description)}</p></div>`).join('')}</div>` : (() => {
+        const technique = character.profile[section];
+        return `<section class="technique-detail"><p class="technique-explainer">${section === 'domain' ? 'El dominio despliega un poder propio que cambia las condiciones del combate. Cada personaje lo controla de una forma distinta.' : 'El especial es el ataque de poder del personaje.'}</p><h3>${escapeHTML(technique.name)}</h3><p>${escapeHTML(technique.description)}</p><div class="technique-sequence">${technique.images.map((src,index) => `<figure><img src="${src}" alt="${escapeHTML(technique.name)}, viñeta ${index + 1} de ${technique.images.length}" loading="lazy" decoding="async"><figcaption>${section === 'domain' ? 'Secuencia del dominio' : 'Secuencia del especial'} · ${index + 1} / ${technique.images.length}</figcaption></figure>`).join('')}</div></section>`;
+      })()}
     </div>`);
-  $('#profile-character').addEventListener('change', event => openCharacterProfile(event.target.value));
+  $('#profile-character').addEventListener('change', event => openCharacterProfile(event.target.value, section));
+  $$('[data-profile-section]', dialog).forEach(button => button.addEventListener('click', () => openCharacterProfile(id, button.dataset.profileSection)));
 }
+$$('[data-open-technique]').forEach(button => button.addEventListener('click', () => openCharacterProfile(selectedCharacterId, button.dataset.openTechnique)));
 $('#open-profile').addEventListener('click', () => openCharacterProfile(selectedCharacterId));
 
 })();
