@@ -9,12 +9,12 @@ function imageAttrs(src, sizes = '(max-width: 700px) 100vw, 50vw') {
   if (!info) return '';
   return `width="${info.width}" height="${info.height}" decoding="async" srcset="${info.variants.map(v => `${v.src} ${v.width}w`).join(', ')}" sizes="${sizes}"`;
 }
-function setImage(image, src) {
+function setImage(image, src, sizes = '(max-width: 700px) 100vw, 50vw') {
   const info = window.webImages?.[src];
   if (info) {
     image.width = info.width;
     image.height = info.height;
-    image.sizes = '(max-width: 700px) 100vw, 50vw';
+    image.sizes = sizes;
     image.srcset = info.variants.map(v => `${v.src} ${v.width}w`).join(', ');
   } else {
     image.removeAttribute('srcset');
@@ -182,23 +182,57 @@ async function loadRoster() {
 }
 loadRoster();
 const arenas = [
+  {id:'orbital', name:'Ascenso Orbital', description:'La pelea despega desde Atacama y atraviesa las nubes hasta alcanzar el amanecer en órbita. Las tarimas pueden romperse durante el ascenso.', phases:[
+    {id:'launch', name:'Despegue en Atacama', image:'assets/orbital-launch.webp', description:'El desierto tiembla bajo los motores. La arena comienza su viaje hacia el cielo.'},
+    {id:'cloud', name:'Capa de nubes', image:'assets/orbital-cloud.webp', description:'La nave atraviesa un océano de nubes mientras el combate sigue sobre sus tarimas destructibles.'},
+    {id:'orbit', name:'Amanecer en órbita', image:'assets/orbital-orbit.webp', description:'La Tierra se curva bajo tus pies. El horizonte se enciende al final del ascenso.'}
+  ]},
+  {id:'express', name:'Expreso del Umbral', description:'Combate sobre un tren que atraviesa estación, bosque, túnel y lago. Al entrar al túnel, las plataformas bajan hasta el techo.', phases:[
+    {id:'station', name:'Estación de trenes', image:'assets/threshold-station.webp', description:'Hierro, cristal y luz dorada. El expreso parte de la estación con la pelea sobre el techo.'},
+    {id:'forest', name:'Bosques y montañas', image:'assets/threshold-forest.webp', description:'El bosque pasa a toda velocidad y las montañas abren el horizonte. La ruta sigue hacia el túnel.'},
+    {id:'tunnel', name:'Túnel del Umbral', image:'assets/threshold-tunnel.webp', description:'El techo se acerca y las plataformas descienden. La pelea continúa a ras del tren.'},
+    {id:'lake', name:'Lago entre montañas', image:'assets/threshold-lake.webp', description:'El tren sale de la oscuridad junto al lago. Las plataformas vuelven a elevarse para abrir la pelea.'}
+  ]},
+  {id:'voyage', name:'Travesía del cuento', description:'Un barco cruza del agua turquesa a la tempestad. Las olas balancean la cubierta y los impactos desgastan sus tablas.', phases:[
+    {id:'coast', name:'Costa del cuento', image:'assets/voyage-coast.webp', description:'La travesía comienza frente a una costa luminosa. El oleaje mece el barco y sus plataformas.'},
+    {id:'storm', name:'Tempestad en alta mar', image:'assets/voyage-storm.webp', description:'Las nubes cierran el cielo. La lluvia y las olas sacuden la cubierta mientras el barco recibe cada impacto.'}
+  ]},
   {id:'colossus', name:'Jardín del Coloso', description:'Un jardín que despierta. Raíces, fracturas y plataformas que vuelven a crecer.'},
   {id:'clock', name:'Reloj del Vacío', description:'Engranajes y sellos suspendidos. El tiempo transforma las rutas de la pelea.'},
   {id:'tides', name:'Palacio de las Mareas', description:'El océano mueve los apoyos. Las olas y las cadenas cambian el terreno.'},
   {id:'storm', name:'Santuario de la tormenta', description:'Ruinas bajo un cielo agitado. Meteoritos y pilares ponen a prueba tu posición.'},
   {id:'temple', name:'Templo celestial', description:'Una arena entre las nubes. La campana anuncia una onda que atraviesa el templo.'}
 ];
-$('.arena-options').innerHTML = arenas.map((arena, index) => `<button type="button" class="arena-option" data-arena="${arena.id}" aria-pressed="${index === 0}"><img src="assets/${arena.id}.webp" alt="" loading="lazy" ${imageAttrs(`assets/${arena.id}.webp`, '90px')}><span>${arena.name}</span></button>`).join('');
+const arenaImage = arena => arena.phases?.[0].image || `assets/${arena.id}.webp`;
+let selectedArena = arenas[0];
+$('.arena-options').innerHTML = arenas.map((arena, index) => `<button type="button" class="arena-option" data-arena="${arena.id}" aria-pressed="${index === 0}" aria-controls="arena-preview"><img src="${arenaImage(arena)}" alt="" loading="lazy" ${imageAttrs(arenaImage(arena), '(max-width: 600px) 156px, 280px')}><span>${arena.name}</span></button>`).join('');
+function selectArenaPhase(arena, phase) {
+  setImage($('#arena-image'), phase?.image || arenaImage(arena), '(max-width: 600px) 720px, (max-width: 1320px) 100vw, 1280px');
+  $('#arena-image').alt = phase ? `${arena.name}, ${phase.name}` : `Ilustración del escenario ${arena.name}`;
+  $('#arena-title').textContent = arena.name;
+  $('#arena-phase-name').textContent = phase?.name || '';
+  $('#arena-phase-name').hidden = !phase;
+  $('#arena-description').textContent = phase?.description || arena.description;
+  $$('#arena-phases button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.phase === phase?.id)));
+}
+function selectArena(arena) {
+  selectedArena = arena;
+  $('#arena-phases').hidden = !arena.phases;
+  $('#arena-phases').innerHTML = (arena.phases || []).map(phase => `<button type="button" data-phase="${phase.id}" aria-pressed="false" aria-controls="arena-preview">${phase.name}</button>`).join('');
+  $$('.arena-option').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.arena === arena.id)));
+  selectArenaPhase(arena, arena.phases?.[0]);
+}
 $('.arena-options').addEventListener('click', e => {
   const button = e.target.closest('[data-arena]');
   if (!button) return;
   const arena = arenas.find(a => a.id === button.dataset.arena);
-  setImage($('#arena-image'), `assets/${arena.id}.webp`);
-  $('#arena-image').alt = `Ilustración del escenario ${arena.name}`;
-  $('#arena-title').textContent = arena.name;
-  $('#arena-description').textContent = arena.description;
-  $$('.arena-option').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+  selectArena(arena);
 });
+$('#arena-phases').addEventListener('click', e => {
+  const button = e.target.closest('[data-phase]');
+  if (button) selectArenaPhase(selectedArena, selectedArena.phases.find(phase => phase.id === button.dataset.phase));
+});
+selectArena(selectedArena);
 const artworks = [
   {id:'mai', title:'Mai, sueños estelares', category:'personajes', src:'assets/mai.webp'},
   {id:'colossus', title:'Jardín del Coloso', category:'escenarios', src:'assets/colossus.webp', wide:true},
@@ -208,7 +242,10 @@ const artworks = [
   {id:'tides', title:'Palacio de las Mareas', category:'escenarios', src:'assets/tides.webp'},
   {id:'alonso', title:'A, guardián del agua', category:'personajes', src:'assets/alonso.webp'},
   {id:'karina-super', title:'Vendaval fatal', category:'vinetas', src:'assets/karina-super.webp', wide:true},
-  {id:'clock', title:'Reloj del Vacío', category:'escenarios', src:'assets/clock.webp'}
+  {id:'clock', title:'Reloj del Vacío', category:'escenarios', src:'assets/clock.webp'},
+  ...arenas.flatMap(arena => (arena.phases || []).map(phase => ({
+    id:`${arena.id}-${phase.id}`, title:`${arena.name} · ${phase.name}`, category:'escenarios', src:phase.image, wide:true
+  })))
 ];
 function renderGallery(filter = 'all') {
   const visible = artworks.filter(art => filter === 'all' || art.category === filter);

@@ -2334,3 +2334,83 @@ dialog::backdrop {
   .roster-featured .roster-name { font-size:14px; }
   .featured-fighter .fighter-word { font-size:clamp(38px,13cqi,82px); }
 }
+
+/* The changing landscapes share one panoramic preview and explicit route controls. */
+.arena-explorer { grid-template-columns:minmax(0,1fr); gap:18px; }
+.arena-image {
+  height:auto;
+  aspect-ratio:16 / 9;
+  border:1px solid #33e0ff40;
+  background:var(--arena-ink);
+}
+.arena-image>img { position:absolute; inset:0; }
+.arena-image:after {
+  pointer-events:none;
+  inset:0;
+  background:linear-gradient(0deg,#060b18f5,transparent 65%);
+}
+.arena-caption { left:36px; right:36px; bottom:30px; max-width:650px; }
+.arena-caption h4 { font-size:clamp(32px,4.5vw,58px); line-height:1.05; }
+.arena-caption p { font-size:16px; line-height:1.5; }
+.arena-caption #arena-phase-name { margin:0 0 8px; color:#ffe397; }
+.arena-phases { display:flex; flex-wrap:wrap; gap:10px; }
+.arena-phases[hidden] { display:none; }
+.arena-phases button {
+  min-height:46px;
+  padding:11px 18px;
+  border:1px solid #33e0ff50;
+  background:var(--arena-ink);
+  color:var(--white);
+  font:600 16px/1.3 var(--display);
+  cursor:pointer;
+}
+.arena-phases button[aria-pressed=true] {
+  border-color:var(--arena-gold);
+  background:#243954;
+  color:#ffe397;
+  box-shadow:inset 0 -2px var(--arena-gold);
+}
+.arena-options {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  padding:4px;
+  overflow:visible;
+}
+.arena-option {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:0;
+  min-width:0;
+  padding:0;
+  font:600 18px/1.2 var(--display);
+  cursor:pointer;
+}
+.arena-option img { width:100%; height:auto; aspect-ratio:16 / 9; border-radius:0; }
+.arena-option span { padding:12px; }
+.arena-option[aria-pressed=true]:after { display:none; }
+.arena-option[aria-pressed=true] { box-shadow:0 0 0 1px var(--arena-gold); }
+.arena-option:focus-visible,.arena-phases button:focus-visible { outline:3px solid #fff; outline-offset:3px; }
+@media(max-width:600px) {
+  .filter-group { flex-wrap:wrap; }
+  .arena-image { aspect-ratio:auto; height:360px; }
+  .arena-caption { left:20px; right:20px; bottom:22px; }
+  .arena-caption h4 { font-size:34px; }
+  .arena-caption p { font-size:14px; }
+  .arena-image:after { background:linear-gradient(0deg,#060b18,transparent 90%); }
+  .arena-phases { gap:8px; }
+  .arena-phases button { padding:10px 12px; font-size:15px; flex:1 1 auto; }
+  .arena-options {
+    display:flex;
+    overflow-x:auto;
+    gap:10px;
+    padding:4px 4px 14px;
+    scroll-snap-type:x proximity;
+    overscroll-behavior-x:contain;
+    scrollbar-width:thin;
+    scrollbar-color:var(--arena-gold) transparent;
+  }
+  .arena-option { flex:0 0 156px; scroll-snap-align:start; font-size:16px; }
+}
