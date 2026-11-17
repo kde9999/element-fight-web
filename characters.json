@@ -1,5 +1,193 @@
 [
   {
+    "id": "nao",
+    "name": "Nao",
+    "subtitle": "Soberano del Horizonte",
+    "description": "Cuando Nao parte el mar, la arena se convierte en un estrecho entre dos murallas de agua.",
+    "domain": "Donde termina el mapa",
+    "image": "assets/nao.webp",
+    "featured": true,
+    "accent": "#51D8DB",
+    "profile": {
+      "abilities": [
+        {
+          "name": "Pie de mar",
+          "description": "Avanzar hacia el rival carga una reserva. El siguiente golpe normal que acierte lo impulsa hacia delante."
+        },
+        {
+          "name": "Corriente",
+          "description": "Coloca una boya y vuelve a pulsar Poder para abrir una ruta de agua que lo impulsa y golpea al rival."
+        }
+      ],
+      "special": {
+        "name": "El mar se abre",
+        "description": "Nao separa las aguas y cierra el corredor frontal sobre quien siga dentro.",
+        "images": [
+          "assets/techniques/nao/special-1.webp",
+          "assets/techniques/nao/special-2.webp",
+          "assets/techniques/nao/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Donde termina el mapa",
+        "description": "Ordena ataques alternados: el leviatán cruza el carril bajo, medio o alto; el pulpo golpea una columna donde tocas. La espuma anuncia el ataque: corre, salta o esquiva para salir de su trayectoria.",
+        "images": [
+          "assets/techniques/nao/domain-1.webp",
+          "assets/techniques/nao/domain-2.webp",
+          "assets/techniques/nao/domain-3.webp"
+        ]
+      }
+    }
+  },
+  {
+    "id": "macula",
+    "name": "Mácula",
+    "subtitle": "El rostro de todos",
+    "description": "Cada máscara guarda una forma de pelear. Mácula entra con tinta en las manos y sale con el rostro de su rival.",
+    "domain": "Mil rostros, ninguna ley",
+    "image": "assets/macula.webp",
+    "featured": true,
+    "accent": "#51E2CB",
+    "profile": {
+      "abilities": [
+        {
+          "name": "Robo de identidad",
+          "description": "Conecta tres ataques normales distintos para llenar sus máscaras. Con las tres, Desgarro arranca un rostro de tinta si acierta."
+        },
+        {
+          "name": "Copiar",
+          "description": "Usa el rostro robado para adoptar los ataques del rival durante ocho segundos."
+        }
+      ],
+      "special": {
+        "name": "Usurpación absoluta",
+        "description": "Mácula lanza un golpe de tinta. Si acierta, marca la identidad del rival para poder copiar sus ataques.",
+        "images": [
+          "assets/techniques/macula/special-1.webp",
+          "assets/techniques/macula/special-2.webp",
+          "assets/techniques/macula/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Mil rostros, ninguna ley",
+        "description": "Tres dominios robados se sortean sin repetir. Se activan automáticamente sobre la galería de Mácula; toca para apuntar antes del ataque. El rival puede correr, saltar y esquivar los avisos.",
+        "images": [
+          "assets/techniques/macula/domain-1.webp",
+          "assets/techniques/macula/domain-2.webp",
+          "assets/techniques/macula/domain-3.webp"
+        ]
+      }
+    }
+  },
+  {
+    "id": "maquinista",
+    "name": "Maquinista",
+    "subtitle": "El Maquinista de Hierro",
+    "description": "Su caldera se alimenta de cada intercambio. Cuando suena el silbato, la pelea ya está sobre los rieles.",
+    "domain": "Vía de carga",
+    "image": "assets/maquinista.webp",
+    "featured": true,
+    "accent": "#E69735",
+    "profile": {
+      "abilities": [
+        {
+          "name": "Presión de vapor",
+          "description": "Acertar golpes normales o bloquear ataques alimenta la caldera. Sus técnicas consumen la presión acumulada."
+        }
+      ],
+      "special": {
+        "name": "A toda máquina",
+        "description": "Maquinista embiste por tierra. Si conecta, arrastra al rival y lo despide con el frenazo final.",
+        "images": [
+          "assets/techniques/maquinista/special-1.webp",
+          "assets/techniques/maquinista/special-2.webp",
+          "assets/techniques/maquinista/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Vía de carga",
+        "description": "Toca una de las tres alturas y el lado de salida; suelta para lanzar el tren. El silbato y el riel avisan la ruta fija. El rival puede correr, saltar y esquivar.",
+        "images": [
+          "assets/techniques/maquinista/domain-1.webp",
+          "assets/techniques/maquinista/domain-2.webp",
+          "assets/techniques/maquinista/domain-3.webp"
+        ]
+      }
+    }
+  },
+  {
+    "id": "notario",
+    "name": "Notario Espectral",
+    "subtitle": "Toda deuda tiene sentencia",
+    "description": "Cada remate firma una deuda. Cuando el Notario Espectral dicta sentencia, las cadenas se encargan del cobro.",
+    "domain": "Tribunal de la Deuda",
+    "image": "assets/notario.webp",
+    "featured": true,
+    "accent": "#C9414C",
+    "profile": {
+      "abilities": [
+        {
+          "name": "Contrato de deuda",
+          "description": "Los remates de combo con ataques normales sellan una deuda. Su cadena consume un sello al acertar y arrastra al rival hacia él."
+        }
+      ],
+      "special": {
+        "name": "Interés compuesto",
+        "description": "Con al menos un sello, el Notario puede dictar el cobro. La mano espectral golpea la zona marcada con una fuerza que aumenta con la deuda acumulada.",
+        "images": [
+          "assets/techniques/notario/special-1.webp",
+          "assets/techniques/notario/special-2.webp",
+          "assets/techniques/notario/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Tribunal de la Deuda",
+        "description": "Toca el suelo para dictar una sentencia de cadenas. El sello avisa antes de subir: el rival puede correr, saltar y esquivar.",
+        "images": [
+          "assets/techniques/notario/domain-1.webp",
+          "assets/techniques/notario/domain-2.webp",
+          "assets/techniques/notario/domain-3.webp"
+        ]
+      }
+    }
+  },
+  {
+    "id": "viuda",
+    "name": "Aracnia",
+    "subtitle": "La tejedora de obsidiana",
+    "description": "Un hilo basta para marcar a su presa. Aracnia lo sigue hasta el rival y deja un nido en el punto de partida.",
+    "domain": "Diluvio de obsidiana",
+    "image": "assets/viuda.webp",
+    "featured": true,
+    "accent": "#DD69FF",
+    "profile": {
+      "abilities": [
+        {
+          "name": "Marca de seda",
+          "description": "El lazo marca al rival. Su ataque lateral se abalanza sobre la presa marcada y, al acertar, deja un nido en el punto de partida."
+        }
+      ],
+      "special": {
+        "name": "Emboscada de los cuatro colmillos",
+        "description": "Si su lazo inicial atrapa al rival, Aracnia encadena golpes con sus patas espectrales y lo lanza con el último impacto.",
+        "images": [
+          "assets/techniques/viuda/special-1.webp",
+          "assets/techniques/viuda/special-2.webp",
+          "assets/techniques/viuda/special-3.webp"
+        ]
+      },
+      "domain": {
+        "name": "Diluvio de obsidiana",
+        "description": "La telaraña cubre la arena. Arrastra para inclinar las oleadas; el rival debe leer los anillos y cruzar los huecos. Cada araña detona al contacto.",
+        "images": [
+          "assets/techniques/viuda/domain-1.webp",
+          "assets/techniques/viuda/domain-2.webp",
+          "assets/techniques/viuda/domain-3.webp"
+        ]
+      }
+    }
+  },
+  {
     "id": "jorge",
     "name": "Ito",
     "subtitle": "Niño rayo",

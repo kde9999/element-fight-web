@@ -29,7 +29,7 @@ const dialog = $('#content-dialog');
 let lastFocus;
 let readerState = null;
 let rosterCharacters = [];
-let selectedCharacterId = 'jorge';
+let selectedCharacterId = $('#personajes').dataset.characterId;
 function openDialog(context, html) {
   if (!dialog.open) lastFocus = document.activeElement;
   readerState = null;
@@ -90,6 +90,9 @@ const descriptions = {
   eco: 'El hermano mayor de Chronos tiene su propia historia. Eco encuentra su lugar entre el tiempo y su Punto de retorno.',
   regente: 'Una voluntad se mueve tras el velo. El Regente lleva su presencia a la arena y reclama el espacio de su corte.'
 };
+const describeCharacter = character => character.description || descriptions[character.id] || character.subtitle;
+const characterAccent = character => /^#[0-9a-f]{6}$/i.test(character.accent) ? character.accent : '';
+
 async function loadRoster() {
   try {
     const embedded = $('#character-data');
@@ -102,29 +105,52 @@ async function loadRoster() {
       characters = await response.json();
     }
     rosterCharacters = characters;
+    const roster = $('#roster');
+    const showcase = $('#personajes');
+    const art = $('.fighter-art', showcase);
+    const word = $('.fighter-word', art);
+    const rosterButton = character => {
+      const name = escapeHTML(character.name);
+      const accent = characterAccent(character);
+      const sizes = character.featured ? '(max-width: 700px) 108px, 134px' : '80px';
+      return `<button type="button" data-character="${escapeHTML(character.id)}" aria-label="Ver a ${name}" title="${name}" aria-pressed="false"${accent ? ` style="--fighter-accent:${accent}"` : ''}>
+        <img src="${escapeHTML(character.image)}" alt="" loading="lazy" ${imageAttrs(character.image, sizes)}>
+        <span class="roster-name">${name}</span>
+      </button>`;
+    };
+    const featured = characters.filter(character => character.featured);
     $('#roster-count').textContent = `${characters.length} personajes`;
-    $('#roster').innerHTML = characters.map(character => `<button type="button" data-character="${escapeHTML(character.id)}" aria-label="Ver a ${escapeHTML(character.name)}" title="${escapeHTML(character.name)}" aria-pressed="${character.id === 'jorge'}"><img src="${escapeHTML(character.image)}" alt="" loading="lazy" ${imageAttrs(escapeHTML(character.image), '80px')}><span class="roster-name">${escapeHTML(character.name)}</span></button>`).join('');
-    const selectCharacter = (id) => {
+    roster.innerHTML = `${featured.length ? `<div class="roster-featured" role="group" aria-label="Últimas incorporaciones"><p class="roster-featured-title">Últimas incorporaciones</p>${featured.map(rosterButton).join('')}</div>` : ''}${characters.filter(character => !character.featured).map(rosterButton).join('')}`;
+    const rosterButtons = $$('[data-character]', roster);
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+    let wordAnimation;
+    const selectCharacter = (id, fromInteraction = true) => {
       const character = characters.find(c => c.id === id);
       if (!character) return;
-      const button = $$('#roster [data-character]').find(item => item.dataset.character === id);
+      const button = rosterButtons.find(item => item.dataset.character === id);
+      const changed = selectedCharacterId !== id;
       selectedCharacterId = character.id;
+      showcase.classList.toggle('featured-fighter', Boolean(character.featured));
+      showcase.style.setProperty('--fighter-accent', characterAccent(character));
       $('#open-profile').setAttribute('aria-label', `Ver ficha de ${character.name}`);
       $('#fighter-name').textContent = character.name;
-      $('.fighter-word').textContent = character.name;
+      word.textContent = character.name;
       $('#fighter-subtitle').textContent = character.subtitle;
-      $('#fighter-description').textContent = descriptions[character.id] || character.subtitle;
+      $('#fighter-description').textContent = describeCharacter(character);
       $('#fighter-domain').textContent = character.domain;
       setImage($('#fighter-image'), character.image);
       $('#fighter-image').alt = `Ilustración de ${character.name}, ${character.subtitle}`;
-      $$('#roster button').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+      rosterButtons.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
       $('#fighter-position').textContent = `${character.name} · ${characters.indexOf(character) + 1} / ${characters.length}`;
-      if (matchMedia('(max-width: 700px)').matches) {
-        const roster = $('#roster');
-        roster.scrollTo({left: button.offsetLeft - (roster.clientWidth - button.offsetWidth) / 2, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+      wordAnimation?.cancel();
+      if (fromInteraction && changed && character.featured && !reducedMotion.matches) {
+        wordAnimation = word.animate([{opacity:0, transform:'translateY(14px)'}, {opacity:1, transform:'none'}], {duration:275, easing:'cubic-bezier(.2,.7,.3,1)'});
+      }
+      if (fromInteraction && matchMedia('(max-width: 700px)').matches) {
+        roster.scrollTo({left: button.offsetLeft - (roster.clientWidth - button.offsetWidth) / 2, behavior: reducedMotion.matches ? 'instant' : 'smooth'});
       }
     };
-    $('#roster').onclick = e => {
+    roster.onclick = e => {
       const button = e.target.closest('[data-character]');
       if (button) selectCharacter(button.dataset.character);
     };
@@ -135,7 +161,6 @@ async function loadRoster() {
     $$('[data-fighter-step]').forEach(button => {
       button.onclick = () => stepCharacter(Number(button.dataset.fighterStep));
     });
-    const art = $('.fighter-art');
     let touchStart = null;
     art.ontouchstart = e => {
       touchStart = e.touches.length === 1 ? {x:e.touches[0].clientX, y:e.touches[0].clientY} : null;
@@ -148,7 +173,7 @@ async function loadRoster() {
       touchStart = null;
     };
     art.ontouchcancel = () => { touchStart = null; };
-    selectCharacter(selectedCharacterId);
+    selectCharacter(characters.some(character => character.id === selectedCharacterId) ? selectedCharacterId : characters[0].id, false);
   } catch {
     $('#roster-count').textContent = 'Plantel no disponible';
     $('#roster').innerHTML = '<button class="roster-retry" type="button">Volver a cargar</button>';
@@ -277,7 +302,7 @@ function openCharacterProfile(id, section = "abilities") {
         <div><h2 id="dialog-title">${escapeHTML(character.name)}</h2><p class="profile-subtitle">${escapeHTML(character.subtitle)}</p></div>
         <label class="profile-switch">Cambiar personaje<select id="profile-character">${rosterCharacters.map(item => `<option value="${item.id}" ${item.id === id ? 'selected' : ''}>${escapeHTML(item.name)}</option>`).join('')}</select></label>
       </div>
-      <div class="profile-intro"><p>${escapeHTML(descriptions[id] || character.subtitle)}</p></div>
+      <div class="profile-intro"><p>${escapeHTML(describeCharacter(character))}</p></div>
       <nav class="profile-sections" aria-label="Explorar personaje">
         ${[['abilities','Pasiva y habilidades'],['special','Especial'],['domain','Dominio']].map(([key,label]) => `<button type="button" data-profile-section="${key}" aria-pressed="${section === key}">${label}</button>`).join('')}
       </nav>

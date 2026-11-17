@@ -586,6 +586,38 @@
       }
     ]
   },
+  "assets/macula.webp": {
+    "width": 1100,
+    "height": 619,
+    "bytes": 206946,
+    "variants": [
+      {
+        "src": "assets/responsive/macula-96.webp",
+        "width": 96,
+        "bytes": 2972
+      },
+      {
+        "src": "assets/responsive/macula-192.webp",
+        "width": 192,
+        "bytes": 9710
+      },
+      {
+        "src": "assets/responsive/macula-320.webp",
+        "width": 320,
+        "bytes": 23242
+      },
+      {
+        "src": "assets/responsive/macula-640.webp",
+        "width": 640,
+        "bytes": 76308
+      },
+      {
+        "src": "assets/macula.webp",
+        "width": 1100,
+        "bytes": 206946
+      }
+    ]
+  },
   "assets/mai.webp": {
     "width": 1100,
     "height": 733,
@@ -613,6 +645,70 @@
       }
     ]
   },
+  "assets/maquinista.webp": {
+    "width": 969,
+    "height": 1024,
+    "bytes": 218820,
+    "variants": [
+      {
+        "src": "assets/responsive/maquinista-96.webp",
+        "width": 96,
+        "bytes": 4308
+      },
+      {
+        "src": "assets/responsive/maquinista-192.webp",
+        "width": 192,
+        "bytes": 14980
+      },
+      {
+        "src": "assets/responsive/maquinista-320.webp",
+        "width": 320,
+        "bytes": 35514
+      },
+      {
+        "src": "assets/responsive/maquinista-640.webp",
+        "width": 640,
+        "bytes": 107940
+      },
+      {
+        "src": "assets/maquinista.webp",
+        "width": 969,
+        "bytes": 218820
+      }
+    ]
+  },
+  "assets/nao.webp": {
+    "width": 1086,
+    "height": 1275,
+    "bytes": 337524,
+    "variants": [
+      {
+        "src": "assets/responsive/nao-96.webp",
+        "width": 96,
+        "bytes": 5590
+      },
+      {
+        "src": "assets/responsive/nao-192.webp",
+        "width": 192,
+        "bytes": 18582
+      },
+      {
+        "src": "assets/responsive/nao-320.webp",
+        "width": 320,
+        "bytes": 45380
+      },
+      {
+        "src": "assets/responsive/nao-640.webp",
+        "width": 640,
+        "bytes": 141902
+      },
+      {
+        "src": "assets/nao.webp",
+        "width": 1086,
+        "bytes": 337524
+      }
+    ]
+  },
   "assets/nathy.webp": {
     "width": 1100,
     "height": 733,
@@ -637,6 +733,38 @@
         "src": "assets/nathy.webp",
         "width": 1100,
         "bytes": 237980
+      }
+    ]
+  },
+  "assets/notario.webp": {
+    "width": 1024,
+    "height": 1536,
+    "bytes": 286310,
+    "variants": [
+      {
+        "src": "assets/responsive/notario-96.webp",
+        "width": 96,
+        "bytes": 4494
+      },
+      {
+        "src": "assets/responsive/notario-192.webp",
+        "width": 192,
+        "bytes": 15226
+      },
+      {
+        "src": "assets/responsive/notario-320.webp",
+        "width": 320,
+        "bytes": 36694
+      },
+      {
+        "src": "assets/responsive/notario-640.webp",
+        "width": 640,
+        "bytes": 121966
+      },
+      {
+        "src": "assets/notario.webp",
+        "width": 1024,
+        "bytes": 286310
       }
     ]
   },
@@ -912,6 +1040,38 @@
         "src": "assets/vela.webp",
         "width": 1100,
         "bytes": 194020
+      }
+    ]
+  },
+  "assets/viuda.webp": {
+    "width": 1100,
+    "height": 1204,
+    "bytes": 319326,
+    "variants": [
+      {
+        "src": "assets/responsive/viuda-96.webp",
+        "width": 96,
+        "bytes": 4756
+      },
+      {
+        "src": "assets/responsive/viuda-192.webp",
+        "width": 192,
+        "bytes": 17272
+      },
+      {
+        "src": "assets/responsive/viuda-320.webp",
+        "width": 320,
+        "bytes": 43128
+      },
+      {
+        "src": "assets/responsive/viuda-640.webp",
+        "width": 640,
+        "bytes": 137024
+      },
+      {
+        "src": "assets/viuda.webp",
+        "width": 1100,
+        "bytes": 319326
       }
     ]
   }

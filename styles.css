@@ -2265,3 +2265,72 @@ dialog::backdrop {
   .fighter-details .fighter-technique-actions { order:8; margin:12px 20px; }
   .fighter-details .fighter-technique-actions .profile-open { margin:0; padding:12px 8px; font-size:15px; }
 }
+
+.roster-featured {
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:7px;
+  padding-block:5px 12px;
+}
+.roster-featured-title {
+  grid-column:1 / -1;
+  margin:0 0 3px;
+  color:var(--muted);
+  font-size:13px;
+}
+.roster-featured button {
+  aspect-ratio:3 / 4;
+  border:1px solid var(--fighter-accent,var(--arena-cyan));
+  transition:border-color .18s,box-shadow .18s;
+}
+.roster-featured button img {
+  display:block;
+  object-fit:cover;
+  object-position:50% 19%;
+}
+.roster-featured .roster-name {
+  display:flex;
+  position:absolute;
+  inset:auto 0 0;
+  align-items:end;
+  min-height:46px;
+  padding:12px 3px 5px;
+  justify-content:center;
+  color:#fff;
+  background:linear-gradient(transparent,#071324 58%);
+  font:700 clamp(12px,1.3vw,17px)/1 var(--display);
+}
+.roster-featured button[aria-pressed=true] {
+  border-color:#fff;
+  box-shadow:0 0 0 1px var(--fighter-accent),0 0 14px color-mix(in srgb,var(--fighter-accent) 40%,transparent);
+}
+.roster button:focus-visible { outline:2px solid #fff; outline-offset:3px; }
+@media(min-width:701px) {
+  .fighter-details .roster { margin:0 0 24px; }
+  .fighter-details .fighter-subtitle,.fighter-details .domain-detail strong { min-block-size:0; }
+  .fighter-details .fighter-description { min-height:0; min-block-size:3lh; }
+}
+.featured-fighter .fighter-art { container-type:inline-size; }
+.featured-fighter .fighter-art>img { object-position:50% 18%; }
+.featured-fighter .fighter-art:after {
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(0deg,#08121f 0%,#08121f50 26%,transparent 48%);
+  box-shadow:inset 0 -3px var(--fighter-accent),inset 0 0 65px #08121f48;
+}
+.featured-fighter .fighter-word {
+  max-width:calc(100% - 40px);
+  font-size:clamp(42px,16cqi,108px);
+  opacity:1;
+  text-wrap:balance;
+  text-shadow:0 3px 16px #08121f,0 0 34px var(--fighter-accent);
+}
+.featured-fighter .domain-detail { border-color:var(--fighter-accent); }
+@media(max-width:700px) {
+  .roster-featured { display:contents; }
+  .roster-featured-title { display:none; }
+  .roster-featured button { flex-basis:86px; height:104px; }
+  .roster-featured .roster-name { font-size:14px; }
+  .featured-fighter .fighter-word { font-size:clamp(38px,13cqi,82px); }
+}
