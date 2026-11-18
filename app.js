@@ -68,6 +68,23 @@ heroPause.addEventListener('click', () => { heroPaused = !heroPaused; scheduleHe
 heroCarousel.addEventListener('focusin', () => { heroPaused = true; scheduleHeroSlide(); });
 heroCarousel.addEventListener('mouseenter', () => { heroHovered = true; scheduleHeroSlide(); });
 heroCarousel.addEventListener('mouseleave', () => { heroHovered = false; scheduleHeroSlide(); });
+let heroTouchStart;
+heroCarousel.addEventListener('touchstart', event => {
+  heroTouchStart = event.touches.length === 1 && !event.target.closest('button') ? {
+    x:event.touches[0].clientX, y:event.touches[0].clientY
+  } : null;
+}, {passive:true});
+heroCarousel.addEventListener('touchend', event => {
+  if (!heroTouchStart) return;
+  const dx = event.changedTouches[0].clientX - heroTouchStart.x;
+  const dy = event.changedTouches[0].clientY - heroTouchStart.y;
+  heroTouchStart = null;
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+    heroPaused = true;
+    showHeroSlide(heroIndex + (dx < 0 ? 1 : -1), true);
+  }
+}, {passive:true});
+heroCarousel.addEventListener('touchcancel', () => { heroTouchStart = null; }, {passive:true});
 heroCarousel.addEventListener('keydown', event => {
   if (!['ArrowLeft','ArrowRight'].includes(event.key)) return;
   event.preventDefault();

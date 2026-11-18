@@ -58,6 +58,28 @@
       }
     ]
   },
+  "assets/battles/ito-alonso-mobile.webp": {
+    "width": 1024,
+    "height": 1536,
+    "bytes": 448390,
+    "variants": [
+      {
+        "src": "assets/responsive/ito-alonso-mobile-480.webp",
+        "width": 480,
+        "bytes": 117916
+      },
+      {
+        "src": "assets/responsive/ito-alonso-mobile-768.webp",
+        "width": 768,
+        "bytes": 255670
+      },
+      {
+        "src": "assets/battles/ito-alonso-mobile.webp",
+        "width": 1024,
+        "bytes": 448390
+      }
+    ]
+  },
   "assets/battles/ito-alonso.webp": {
     "width": 1536,
     "height": 1024,
@@ -82,6 +104,28 @@
         "src": "assets/battles/ito-alonso.webp",
         "width": 1536,
         "bytes": 591524
+      }
+    ]
+  },
+  "assets/battles/trinitron-maquinista-mobile.webp": {
+    "width": 1024,
+    "height": 1536,
+    "bytes": 407048,
+    "variants": [
+      {
+        "src": "assets/responsive/trinitron-maquinista-mobile-480.webp",
+        "width": 480,
+        "bytes": 103904
+      },
+      {
+        "src": "assets/responsive/trinitron-maquinista-mobile-768.webp",
+        "width": 768,
+        "bytes": 228560
+      },
+      {
+        "src": "assets/battles/trinitron-maquinista-mobile.webp",
+        "width": 1024,
+        "bytes": 407048
       }
     ]
   },
