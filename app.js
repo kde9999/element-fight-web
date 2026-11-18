@@ -25,6 +25,62 @@ function setImage(image, src, sizes = '(max-width: 700px) 100vw, 50vw') {
   image.src = src;
 }
 
+const heroSlides = $$('.hero-slide');
+const heroDots = $$('[data-hero-slide]');
+const heroCarousel = $('#hero-carousel');
+const heroPause = $('#hero-pause');
+const heroMotion = matchMedia('(prefers-reduced-motion: reduce)');
+let heroIndex = 0;
+let heroPaused = heroMotion.matches;
+let heroHovered = false;
+let heroVisible = false;
+let heroTimer;
+
+function scheduleHeroSlide() {
+  clearTimeout(heroTimer);
+  heroPause.setAttribute('aria-label', heroPaused ? 'Reanudar presentación' : 'Pausar presentación');
+  heroPause.textContent = heroPaused ? '▶' : 'Ⅱ';
+  if (!heroPaused && !heroHovered && heroVisible && !document.hidden) {
+    heroTimer = setTimeout(() => showHeroSlide(heroIndex + 1), 7000);
+  }
+}
+function showHeroSlide(index, announce = false) {
+  heroIndex = (index + heroSlides.length) % heroSlides.length;
+  heroSlides.forEach((slide, slideIndex) => {
+    const active = slideIndex === heroIndex;
+    slide.classList.toggle('active', active);
+    slide.setAttribute('aria-hidden', String(!active));
+    heroDots[slideIndex].setAttribute('aria-pressed', String(active));
+  });
+  $('#hero-battle-title').textContent = heroSlides[heroIndex].dataset.title;
+  if (announce) $('#hero-slide-status').textContent = `Imagen ${heroIndex + 1} de ${heroSlides.length}. ${heroSlides[heroIndex].dataset.title}`;
+  scheduleHeroSlide();
+}
+$$('[data-hero-step]').forEach(button => button.addEventListener('click', () => {
+  heroPaused = true;
+  showHeroSlide(heroIndex + Number(button.dataset.heroStep), true);
+}));
+heroDots.forEach(button => button.addEventListener('click', () => {
+  heroPaused = true;
+  showHeroSlide(Number(button.dataset.heroSlide), true);
+}));
+heroPause.addEventListener('click', () => { heroPaused = !heroPaused; scheduleHeroSlide(); });
+heroCarousel.addEventListener('focusin', () => { heroPaused = true; scheduleHeroSlide(); });
+heroCarousel.addEventListener('mouseenter', () => { heroHovered = true; scheduleHeroSlide(); });
+heroCarousel.addEventListener('mouseleave', () => { heroHovered = false; scheduleHeroSlide(); });
+heroCarousel.addEventListener('keydown', event => {
+  if (!['ArrowLeft','ArrowRight'].includes(event.key)) return;
+  event.preventDefault();
+  heroPaused = true;
+  showHeroSlide(heroIndex + (event.key === 'ArrowRight' ? 1 : -1), true);
+});
+heroMotion.addEventListener('change', () => { if (heroMotion.matches) heroPaused = true; scheduleHeroSlide(); });
+document.addEventListener('visibilitychange', scheduleHeroSlide);
+new IntersectionObserver(entries => {
+  heroVisible = entries[0].isIntersecting;
+  scheduleHeroSlide();
+}).observe(heroCarousel);
+
 const dialog = $('#content-dialog');
 let lastFocus;
 let readerState = null;
@@ -131,6 +187,7 @@ async function loadRoster() {
       const changed = selectedCharacterId !== id;
       selectedCharacterId = character.id;
       showcase.classList.toggle('featured-fighter', Boolean(character.featured));
+      showcase.classList.toggle('mech-fighter', character.id === 'mapea');
       showcase.style.setProperty('--fighter-accent', characterAccent(character));
       $('#open-profile').setAttribute('aria-label', `Ver ficha de ${character.name}`);
       $('#fighter-name').textContent = character.name;

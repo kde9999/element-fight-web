@@ -1,5 +1,43 @@
 [
   {
+    "id": "mapea",
+    "name": "Trinitron",
+    "subtitle": "Pequeño piloto · gran berrinche",
+    "description": "Pequeño piloto, puños gigantes. Trinitron convierte cada berrinche en una salva de artillería desde su robot de marfil y turquesa.",
+    "domain": "Guardería de artillería",
+    "image": "assets/mapea.webp",
+    "featured": true,
+    "accent": "#FFB84C",
+    "profile": {
+      "abilities": [
+        {
+          "name": "Artillería y calor",
+          "description": "Dispara ráfagas desde los antebrazos y cohetes que explotan al contacto. Los disparos acumulan calor y, al llenar la barra, debe esperar a que enfríe."
+        },
+        {
+          "name": "¡Upa! y pataleta",
+          "description": "Se impulsa hacia arriba para regresar al escenario o desata una pataleta sísmica hacia abajo. Su puño con cable le permite disputar la media distancia."
+        }
+      ],
+      "special": {
+        "name": "¡Este botón!",
+        "description": "Abre las compuertas de los hombros y lanza una salva de cuatro misiles físicos que viajan y explotan contra el rival.",
+        "images": [
+          "assets/techniques/mapea/special-1.webp"
+        ]
+      },
+      "domain": {
+        "name": "Guardería de artillería",
+        "description": "El bebé se duerme mientras marcas un carril. La mira avisa antes de que caiga el misil y el rival puede correr, saltar o esquivar.",
+        "images": [
+          "assets/techniques/mapea/domain-1.webp",
+          "assets/techniques/mapea/domain-2.webp",
+          "assets/techniques/mapea/domain-3.webp"
+        ]
+      }
+    }
+  },
+  {
     "id": "nao",
     "name": "Nao",
     "subtitle": "Soberano del Horizonte",

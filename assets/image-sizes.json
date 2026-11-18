@@ -58,6 +58,60 @@
       }
     ]
   },
+  "assets/battles/ito-alonso.webp": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 591524,
+    "variants": [
+      {
+        "src": "assets/responsive/ito-alonso-320.webp",
+        "width": 320,
+        "bytes": 34196
+      },
+      {
+        "src": "assets/responsive/ito-alonso-640.webp",
+        "width": 640,
+        "bytes": 124446
+      },
+      {
+        "src": "assets/responsive/ito-alonso-1100.webp",
+        "width": 1100,
+        "bytes": 319068
+      },
+      {
+        "src": "assets/battles/ito-alonso.webp",
+        "width": 1536,
+        "bytes": 591524
+      }
+    ]
+  },
+  "assets/battles/trinitron-maquinista.webp": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 482568,
+    "variants": [
+      {
+        "src": "assets/responsive/trinitron-maquinista-320.webp",
+        "width": 320,
+        "bytes": 29422
+      },
+      {
+        "src": "assets/responsive/trinitron-maquinista-640.webp",
+        "width": 640,
+        "bytes": 100978
+      },
+      {
+        "src": "assets/responsive/trinitron-maquinista-1100.webp",
+        "width": 1100,
+        "bytes": 253778
+      },
+      {
+        "src": "assets/battles/trinitron-maquinista.webp",
+        "width": 1536,
+        "bytes": 482568
+      }
+    ]
+  },
   "assets/chronos.webp": {
     "width": 768,
     "height": 768,
@@ -645,6 +699,50 @@
       }
     ]
   },
+  "assets/mapea-background.webp": {
+    "width": 1100,
+    "height": 619,
+    "bytes": 149706,
+    "variants": [
+      {
+        "src": "assets/mapea-background.webp",
+        "width": 1100,
+        "bytes": 149706
+      }
+    ]
+  },
+  "assets/mapea.webp": {
+    "width": 1100,
+    "height": 1204,
+    "bytes": 228066,
+    "variants": [
+      {
+        "src": "assets/responsive/mapea-96.webp",
+        "width": 96,
+        "bytes": 6426
+      },
+      {
+        "src": "assets/responsive/mapea-192.webp",
+        "width": 192,
+        "bytes": 16066
+      },
+      {
+        "src": "assets/responsive/mapea-320.webp",
+        "width": 320,
+        "bytes": 32864
+      },
+      {
+        "src": "assets/responsive/mapea-640.webp",
+        "width": 640,
+        "bytes": 92972
+      },
+      {
+        "src": "assets/mapea.webp",
+        "width": 1100,
+        "bytes": 228066
+      }
+    ]
+  },
   "assets/maquinista.webp": {
     "width": 969,
     "height": 1024,
@@ -1038,6 +1136,54 @@
         "src": "assets/storm.webp",
         "width": 1672,
         "bytes": 223310
+      }
+    ]
+  },
+  "assets/techniques/mapea/domain-1.webp": {
+    "width": 627,
+    "height": 627,
+    "bytes": 87050,
+    "variants": [
+      {
+        "src": "assets/techniques/mapea/domain-1.webp",
+        "width": 627,
+        "bytes": 87050
+      }
+    ]
+  },
+  "assets/techniques/mapea/domain-2.webp": {
+    "width": 627,
+    "height": 627,
+    "bytes": 98878,
+    "variants": [
+      {
+        "src": "assets/techniques/mapea/domain-2.webp",
+        "width": 627,
+        "bytes": 98878
+      }
+    ]
+  },
+  "assets/techniques/mapea/domain-3.webp": {
+    "width": 627,
+    "height": 627,
+    "bytes": 110560,
+    "variants": [
+      {
+        "src": "assets/techniques/mapea/domain-3.webp",
+        "width": 627,
+        "bytes": 110560
+      }
+    ]
+  },
+  "assets/techniques/mapea/special-1.webp": {
+    "width": 1400,
+    "height": 250,
+    "bytes": 76938,
+    "variants": [
+      {
+        "src": "assets/techniques/mapea/special-1.webp",
+        "width": 1400,
+        "bytes": 76938
       }
     ]
   },

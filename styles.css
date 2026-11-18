@@ -2269,7 +2269,7 @@ dialog::backdrop {
 .roster-featured {
   grid-column:1 / -1;
   display:grid;
-  grid-template-columns:repeat(5,minmax(0,1fr));
+  grid-template-columns:repeat(6,minmax(0,1fr));
   gap:7px;
   padding-block:5px 12px;
 }
@@ -2413,4 +2413,66 @@ dialog::backdrop {
     scrollbar-color:var(--arena-gold) transparent;
   }
   .arena-option { flex:0 0 156px; scroll-snap-align:start; font-size:16px; }
+}
+
+.mech-fighter .fighter-art {
+  background:linear-gradient(0deg,#071324b3,#07132455),url("assets/mapea-background.webp") center / cover;
+}
+.mech-fighter .fighter-art>img { object-fit:contain; padding:35px 20px 90px; }
+@media(min-width:701px) and (max-width:1000px) {
+  .roster-featured { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .roster-featured button { aspect-ratio:4 / 3; }
+}
+.hero-carousel { position:absolute; inset:0; }
+.hero-slide { position:absolute; inset:0; opacity:0; visibility:hidden; transition:opacity .65s,visibility .65s; }
+.hero-slide.active { opacity:1; visibility:visible; }
+.hero-visual { width:65%; }
+.hero-visual img { object-position:center; }
+.hero-slider-panel {
+  position:absolute;
+  z-index:3;
+  right:max(40px,calc((100vw - 1280px) / 2));
+  bottom:90px;
+  padding:14px 18px;
+  border:1px solid #33e0ff50;
+  background:#060b18ed;
+}
+.hero-slider-panel p { font:600 18px/1.2 var(--display); margin-bottom:8px; }
+.hero-slider-controls { display:flex; align-items:center; gap:8px; }
+.hero-slider-controls button {
+  display:grid;
+  place-items:center;
+  width:44px;
+  height:44px;
+  border:1px solid #33e0ff50;
+  background:var(--arena-ink);
+  color:var(--white);
+  font:26px/1 var(--display);
+  cursor:pointer;
+}
+.hero-slider-controls button:hover { border-color:var(--arena-gold); }
+.hero-slider-controls button:focus-visible { outline:3px solid #fff; outline-offset:3px; }
+.hero-slider-dots { display:flex; gap:2px; }
+.hero-slider-dots button { width:32px; border-color:transparent; background:transparent; }
+.hero-slider-dots span { width:8px; height:8px; border-radius:50%; background:#91a6c4; }
+.hero-slider-dots [aria-pressed=true] span { background:var(--arena-gold); box-shadow:0 0 9px #ffc95260; }
+#hero-pause { font-size:17px; }
+@media(max-width:850px) {
+  .hero-visual { width:100%; right:0; opacity:1; }
+  .hero-slider-panel { right:24px; bottom:90px; }
+}
+@media(max-width:600px) {
+  .hero,.hero-content { min-height:940px; }
+  .hero-content { padding-bottom:75px; pointer-events:none; }
+  .hero-copy { pointer-events:auto; padding-top:390px; }
+  .hero-visual { height:320px; }
+  .hero-visual img { object-fit:contain; object-position:center top; }
+  .hero-visual:after { background:linear-gradient(0deg,var(--navy),transparent 45%); }
+  .hero-slider-panel { top:260px; right:20px; left:20px; bottom:auto; padding:10px 14px; }
+  .hero-slider-panel p { font-size:16px; margin-bottom:4px; }
+  .hero-slider-controls { justify-content:center; }
+  .mech-fighter .fighter-art>img { padding:8px 12px 60px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero-slide { transition:none; }
 }
